@@ -1,0 +1,13 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(300px,1fr));
+    justify-items: center;
+}
+.container{
+    margin-top: 10rem;
+}
+.title{
+    text-align: center;
+    color: white;
+    margin: 7rem 0;
+}

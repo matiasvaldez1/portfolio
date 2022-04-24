@@ -1,0 +1,16 @@
+.bg{
+    background-image: linear-gradient(150deg, var(--color-2),#a147b3 , var(--color-3));
+    height: 30rem;
+    width: 40%;
+    border-radius: 100vw;
+    margin: auto;
+    opacity: .9;
+    display: flex;
+    color: white;
+}
+.pos{
+    margin-top: 15rem;
+}
+.text{
+    padding-top: 2rem;
+}

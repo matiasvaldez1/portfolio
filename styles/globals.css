@@ -4,6 +4,21 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    scroll-behavior: smooth;
+    background-image: url("../public/assets/background.jpg");
+    height: 4496px;
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(116, 123, 202, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-1);
+  border: 1px solid var(--color-2);
 }
 
 a {
@@ -13,4 +28,11 @@ a {
 
 * {
   box-sizing: border-box;
+}
+:root{
+  --color-1: #2954A3;
+  --color-2: #e771ff;
+  --color-3: #2F2F8A;
+  --color-4: #1C1C65;
+  --color-5: #0F103F;
 }

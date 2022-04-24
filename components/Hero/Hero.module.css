@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+
+.container{
+    color: white;
+    font-size: x-large;
+    user-select: none;
+}
+.pos{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.containerBtn{
+    display: flex; 
+    justify-content: center;
+    gap: 1rem;
+}
+.btnCv{
+    color: white;
+    background-image: linear-gradient(90deg, var(--color-2) , var(--color-1));
+    border: none;
+    border-radius: 20px;
+    padding: 12px;
+    cursor: pointer;
+}
+.btnCv:hover{
+    background-image: linear-gradient(90deg, var(--color-1) , var(--color-2));
+    
+}
+.btnSeeMore{
+    color: white;
+    background-color: gray;
+    border: none;
+    border-radius: 20px;
+    padding: 12px;
+    cursor: pointer;
+}
+.btnSeeMore:hover{
+    opacity: .6;
+}
+
+.div {
+  background: radial-gradient(ellipse at bottom, #022227 0%, #000000 100%);
+  position: relative;
+  font-size: x-large;
+}
+
+.h1{
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  background-image: url("https://img.freepik.com/free-vector/painted-background-multicoloured-palette_23-2148427592.jpg?w=2000");
+  background-size: auto 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  from {
+    background-position: center 0;
+  }
+  to {
+    background-position: center 200%;
+  }
+}
