@@ -9,9 +9,13 @@ export const Card = ({image,title,github,deploy}) => {
       src={image}
       className={styles.img}
       />
+      <div className={styles.text}>
         <h2>{title}</h2>
-        <a href={github}>Github</a>
-        <a href={deploy}>Deploy</a>
+        <div className={styles.links}>
+          <a href={github}>Github</a>
+          <a href={deploy}>Deploy</a>
+        </div>
+      </div>
     </div>
   )
 }

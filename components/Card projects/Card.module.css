@@ -1,7 +1,23 @@
 .img{
     height: 200px;
     width: 300px;
+    border-radius: 4px;
+}
+.img:hover{
+    opacity: .7;
 }
 .container{
     color:white;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
