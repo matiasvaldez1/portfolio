@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from './Introduction.module.css'
+import Image from 'next/image'
+import cat from '../../public/assets/cat.png'
 
 export const Introduction = () => {
   return (
-    <div className={styles.pos}>
+    <div id='about' className={styles.pos}>
         <div className={styles.bg}>
             <h1>Who am I?</h1>
             <div>
@@ -20,6 +22,13 @@ export const Introduction = () => {
             <h2>My working tools: <br/>
             React JS, Next JS, Sass, <br/>
             Tailwind Css, Express and more..</h2>
+        </div>
+        <div className={styles.cat}>
+          <Image 
+          src={cat}
+          width={300}
+          height={200}
+          />
         </div>
     </div>
   )

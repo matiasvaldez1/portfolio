@@ -11,8 +11,8 @@ export const About = () => {
             <div>
                 <Image
                 src={avatar} 
-                height={400}
-                width={250}
+                height={500}
+                width={300}
                 />
                 </div>
             <div className={styles.text}>

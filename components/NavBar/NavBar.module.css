@@ -15,3 +15,6 @@
     margin: 0 40px;
     text-decoration: none;
   }
+  .a:hover{
+    color:var(--color-2);
+  }

@@ -1,5 +1,5 @@
 .bg{
-    background-image: linear-gradient(150deg, var(--color-2),#a147b3 , var(--color-3));
+    background-image: linear-gradient(150deg, var(--color-2), var(--color-1));
     height: 30rem;
     width: 40%;
     border-radius: 100vw;
@@ -9,8 +9,9 @@
     color: white;
 }
 .pos{
-    margin-top: 15rem;
+    margin-top: 10rem;
 }
 .text{
     padding-top: 2rem;
+    padding-right: 3rem;
 }

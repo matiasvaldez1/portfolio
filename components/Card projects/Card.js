@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export const Card = ({image,title,github,deploy}) => {
   return (
-    <div className={styles.container}>
+    <div id='projects' className={styles.container}>
       <img 
       src={image}
       className={styles.img}

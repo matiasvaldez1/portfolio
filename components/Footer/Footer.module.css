@@ -24,3 +24,6 @@
       gap: 2rem;
       margin-top: 6rem;
   }
+  .a:hover{
+    color:var(--color-2);
+  }

@@ -1,5 +1,13 @@
 .pos{
-    margin-top: 120vh;
+    margin-top: 60vh;
+    color: white;
+}
+.img{
+    display: flex;
+    justify-content: center;
+}
+.text{
+    text-align: center;
 }
 .grid{
     display: grid;

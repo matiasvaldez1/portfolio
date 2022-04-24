@@ -20,7 +20,7 @@ export default function Home({projectsProps}) {
       <Introduction />
       <About />
       <div className={styles.container}>
-        <h1 className={styles.title}>My projects</h1>
+        <h1 className={styles.title}>My recent work</h1>
         <div className={styles.grid}>
           {projectsProps?.map(project =>{
             return (

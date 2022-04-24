@@ -1,0 +1,11 @@
+.body{
+    background-image: none;
+}
+.bg{
+    background-color: var(--color-4);
+    height: 100vh;
+}
+.pos{
+    display: flex;
+    justify-content: center;
+}

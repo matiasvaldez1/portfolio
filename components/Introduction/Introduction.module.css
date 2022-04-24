@@ -1,10 +1,17 @@
 .pos{
     margin-top: 15rem;
+    display: flex;
+    justify-content: space-between;
 }
 .bg{
     border-radius: 5px;
     color:white;
     width: 30%;
     height: 30rem;
-    margin-left: 3rem;
+    margin-left: 4rem;
+}
+.cat{
+    height: 100%;
+    margin-top: auto;
+    margin-right: 2rem;
 }
