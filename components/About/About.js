@@ -19,6 +19,7 @@ export const About = () => {
             >
                 <Image
                 src={avatar} 
+                alt={"avatar"}
                 height={500}
                 width={300}
                 />

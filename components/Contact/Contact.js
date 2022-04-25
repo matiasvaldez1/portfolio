@@ -27,7 +27,7 @@ export const Contact = () => {
             transition={{ duration: 1 }}
             className={styles.text}
         >
-            Let's talk!
+            Lets talk!
         </motion.h1>
         <motion.div
             initial={{ x: -200 }}
@@ -35,7 +35,7 @@ export const Contact = () => {
             transition={{ duration: 1 }}
             className={styles.img}
         >
-            <Image src={workingAvatar} width={350} height={350} />
+            <Image alt={"workin avatar"} src={workingAvatar} width={350} height={350} />
         </motion.div>
         <div>
             <div className={styles.grid}>

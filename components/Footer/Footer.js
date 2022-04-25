@@ -4,7 +4,6 @@ import Image from 'next/image'
 import github from '../../public/assets/github.png'
 import gmail from '../../public/assets/gmail.png'
 import linkedin from '../../public/assets/linkedin.png'
-import twitter from '../../public/assets/twitter.png'
 import { BsHouseDoor,BsFillTelephoneFill } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdWorkOutline } from "react-icons/md";
@@ -26,6 +25,7 @@ export const Footer = () => {
           href='https://www.linkedin.com/in/matiasvaldez1/'>
             <Image 
             src={linkedin}
+            alt={"linkedin"}
             width={60}
             height={60}/>
           </motion.a>
@@ -34,6 +34,7 @@ export const Footer = () => {
           href='https://mail.google.com/mail/?view=cm&source=mailto&to=matiasvaldez8184@gmail.com'>
             <Image 
             src={gmail}
+            alt={"gmail"}
             width={60}
             height={60}/>
           </motion.a>
@@ -42,6 +43,7 @@ export const Footer = () => {
           href='https://github.com/matiasvaldez1'>
             <Image 
             src={github}
+            alt={"github"}
             width={60}
             height={60}/>
           </motion.a>

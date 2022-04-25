@@ -16,7 +16,8 @@ export default function Custom404() {
                     <Image 
                     width={500}
                     height={500}
-                    src={errorimage}/>
+                    src={errorimage}
+                    alt={"error"}/>
                 </div>
                 <div className={styles.link}>
                     <Link href={"/"}><a>Go Back To Home</a></Link>

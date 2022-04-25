@@ -39,7 +39,7 @@ export const Introduction = () => {
         whileInView={{x: 0}}
         whileTap={{scale: 1.2}}
         className={styles.cat}>
-        <Image src={cat} width={300} height={200} />
+        <Image src={cat} alt={"cat"} width={300} height={200} />
       </motion.div>
     </div>
   );
