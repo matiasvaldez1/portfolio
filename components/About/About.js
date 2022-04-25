@@ -27,11 +27,11 @@ export const About = () => {
             <div className={styles.text}>
                 <h1 className={styles.h1}>About me</h1>
                 <p className={styles.p}>
-                  Lately I've been more <br/>
+                  Lately Ive been more <br/>
                   interested in developing <br/>
                   my skils as a creative UI <br/>
-                  developer,that's why re- <br/>
-                  cently I've started my <br/>
+                  developer,thats why re- <br/>
+                  cently Ive started my <br/>
                   journey learning <br/>
                   technologies that help <br/>
                   me reach that goal, such <br/>
