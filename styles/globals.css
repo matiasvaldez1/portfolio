@@ -8,6 +8,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     scroll-behavior: smooth;
     background-image: url("https://cdn.discordapp.com/attachments/769061823596068874/968047287290978315/background.jpg");
+    background-size: cover;
     height: 4496px; 
 }
 body::-webkit-scrollbar {
