@@ -10,8 +10,9 @@ export const Hero = () => {
       <NavBar />
       <div className={styles.pos}>
         <motion.div
-          initial={{ x: 500 }}
+          initial={{ x: 800 }}
           animate={{x: 100}}
+          transition={{duration: 1}}
           drag="x"
           dragConstraints={{ left: -100, right: 100 }}
           className={styles.container}

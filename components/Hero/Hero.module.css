@@ -23,10 +23,10 @@
     border-radius: 20px;
     padding: 12px;
     cursor: pointer;
+    font-size: medium;
 }
 .btnCv:hover{
     background-image: linear-gradient(90deg, var(--color-1) , var(--color-2));
-    
 }
 .btnSeeMore{
     color: white;
@@ -35,6 +35,7 @@
     border-radius: 20px;
     padding: 12px;
     cursor: pointer;
+    font-size: medium;
 }
 .btnSeeMore:hover{
     opacity: .6;
