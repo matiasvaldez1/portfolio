@@ -1,10 +1,11 @@
 .bg{
     background-image: linear-gradient(150deg, var(--color-2), #249743);
-    height: 32rem;
-    width: 40%;
+    height: 38em;
+    width: 38em;
     border-radius: 100vw;
     margin: auto;
     display: flex;
+    justify-content: center;
     color: rgb(255, 255, 255);
 }
 .pos{
@@ -36,4 +37,4 @@
     .h1{
         font-size: x-large;
     }
-  }
+}

@@ -21,7 +21,7 @@ export const Introduction = () => {
             My name is Matias valdez, <br />
             a creative <a className={styles.h3}>Frontend developer</a> with <br />
             knowledge about backend. <br />
-            However my main focus as
+            Although my main focus as
             <br />
             developer is to provide to <br />
             the user the most <a className={styles.h1}>interactive</a> <br />
@@ -30,8 +30,8 @@ export const Introduction = () => {
         </div>
         <h2>
           My working tools: <br />
-          React JS, Next JS, Sass, <br />
-          Tailwind Css, Express and more..
+          React JS, Next JS, Typescrypt, <br />
+          Tailwind Css, Sass and more..
         </h2>
       </motion.div>
       <motion.div 
