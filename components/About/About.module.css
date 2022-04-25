@@ -1,11 +1,11 @@
 .bg{
-    background-image: linear-gradient(150deg, var(--color-2), #69bf80);
-    height: 30rem;
+    background-image: linear-gradient(150deg, var(--color-2), #249743);
+    height: 32rem;
     width: 40%;
     border-radius: 100vw;
     margin: auto;
     display: flex;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 .pos{
     margin-top: 10rem;
@@ -14,6 +14,14 @@
     padding-top: 2rem;
     padding-right: 3rem;
 }
+.p{
+    font-size: large;
+    font-weight: 500;
+}
+.h1{
+    font-size: 2.3em;
+}
+
 @media (max-width: 1000px) {
     .bg{
         width: 100%;

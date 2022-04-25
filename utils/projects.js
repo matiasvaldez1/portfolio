@@ -11,8 +11,8 @@ export const projects = [
     "github":"https://github.com/matiasvaldez1/PI-COUNTRYS-HENRY",
     "deploy":"https://pi-countrys-henry.vercel.app/",
     "image":"https://cdn.discordapp.com/attachments/769061823596068874/967750595660382258/unknown.png"},
-    {"title":"React Calculator",
-    "github":"https://github.com/matiasvaldez1/my-calculator-proyect",
-    "deploy":"https://my-calculator-proyect.vercel.app/",
-    "image":"https://cdn.discordapp.com/attachments/769061823596068874/967751040885747832/unknown.png"}
+    {"title":"TechStore Ecommerce",
+    "github":"https://github.com/sebMar92/e-commerce-frontend",
+    "deploy":"https://tech-store-dev.vercel.app/",
+    "image":"https://cdn.discordapp.com/attachments/769061823596068874/968180818138775612/unknown.png"}
 ]

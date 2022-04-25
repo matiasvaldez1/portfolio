@@ -40,7 +40,7 @@ export const Contact = () => {
         <div>
             <div className={styles.grid}>
             <div>
-                <h2>Get in touch</h2>
+                <h2 className={styles.h2}>Get in touch</h2>
                 <p className={styles.p}>
                 I am very approchable and <br />
                 would love to speak with you. <br />
@@ -51,7 +51,7 @@ export const Contact = () => {
                 <p className={styles.mail}>{<AiOutlineMail className={styles.mail} />} matiasvaldez8184@gmail.com</p>
             </div>
             <div className={styles.inputs}>
-                <h2>Send me a message</h2>
+                <h2 className={styles.h2}>Send me a message</h2>
                 <form ref={form} onSubmit={sendEmail} className={styles.inputs}>
                 <input placeholder="Name" name="name" type="text" required className={styles.input} />
                 <input placeholder="Email" name="email" required className={styles.input} />

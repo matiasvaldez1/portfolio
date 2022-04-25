@@ -25,8 +25,22 @@ export const About = () => {
                 />
             </motion.div>
             <div className={styles.text}>
-                <h1>About me</h1>
-                <p>ajjasjasjaaksajskasjaskajsajk</p>
+                <h1 className={styles.h1}>About me</h1>
+                <p className={styles.p}>
+                  Lately I've been more <br/>
+                  interested in developing <br/>
+                  my skils as a creative UI <br/>
+                  developer,that's why re- <br/>
+                  cently I've started my <br/>
+                  journey learning <br/>
+                  technologies that help <br/>
+                  me reach that goal, such <br/>
+                  as Three Js or UI/UX design. <br/>
+                  You can follow my journey <br/>
+                  following in my social <br/>
+                  media where I will be <br/>
+                  posting my progress. <br/>
+                </p>
             </div>
         </motion.div>
     </div>

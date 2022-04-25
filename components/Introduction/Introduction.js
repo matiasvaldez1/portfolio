@@ -15,17 +15,17 @@ export const Introduction = () => {
         transition={{ duration: 0.6 }}
         className={styles.bg}
       >
-        <h1>Who am I?</h1>
+        <h1 className={`${styles.h1} ${styles.h1Size}`}>Who am I?</h1>
         <div>
           <h2>
             My name is Matias valdez, <br />
-            a creative UI developer with <br />
+            a creative <a className={styles.h3}>Frontend developer</a> with <br />
             knowledge about backend. <br />
-            However my focus as frontend
+            However my main focus as
             <br />
             developer is to provide to <br />
-            the user the most interactive <br />
-            and simpler experience.
+            the user the most <a className={styles.h1}>interactive</a> <br />
+            and <a className={styles.h2}>simpler</a> experience.
           </h2>
         </div>
         <h2>

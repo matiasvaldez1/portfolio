@@ -16,6 +16,18 @@
     margin-top: auto;
     margin-right: 3rem;
 }
+.h1{
+    color:var(--color-2);
+}
+.h1Size{
+    font-size: 2.3em;
+}
+.h2{
+    color:#5ad67b
+}
+.h3{
+    color:#70d3fa
+}
 @media (max-width: 600px) {
     .pos{
         flex-direction: column;
