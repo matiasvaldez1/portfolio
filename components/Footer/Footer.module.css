@@ -22,6 +22,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
+      margin-top: 3rem;
   }
   .a:hover{
     color:var(--color-2);
