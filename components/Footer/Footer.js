@@ -23,14 +23,6 @@ export const Footer = () => {
         <div className={styles.images}>
           <motion.a 
           whileHover={{scale: 1.2}}
-          href='https://twitter.com/matiasfci'>
-            <Image 
-            src={twitter}
-            width={60}
-            height={60}/>
-          </motion.a>
-          <motion.a 
-          whileHover={{scale: 1.2}}
           href='https://www.linkedin.com/in/matiasvaldez1/'>
             <Image 
             src={linkedin}

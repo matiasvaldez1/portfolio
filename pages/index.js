@@ -22,9 +22,10 @@ export default function Home({projectsProps}) {
       <div id='projects' className={styles.container}>
         <h1 className={styles.title}>My recent work</h1>
         <div className={styles.grid}>
-          {projectsProps?.map(project =>{
+          {projectsProps?.map((project,k) =>{
             return (
               <Card 
+              key={k}
               image={project.image}
               title={project.title}
               github={project.github}
