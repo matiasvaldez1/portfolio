@@ -8,7 +8,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     scroll-behavior: smooth;
     background-image: url("../public/assets/background.jpg");
-    height: 4496px;
+    height: 4496px; 
 }
 body::-webkit-scrollbar {
   width: 1em;

@@ -19,7 +19,7 @@ export default function Home({projectsProps}) {
       <Hero />
       <Introduction />
       <About />
-      <div className={styles.container}>
+      <div id='projects' className={styles.container}>
         <h1 className={styles.title}>My recent work</h1>
         <div className={styles.grid}>
           {projectsProps?.map(project =>{

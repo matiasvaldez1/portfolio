@@ -8,6 +8,7 @@ import twitter from '../../public/assets/twitter.png'
 import { BsHouseDoor,BsFillTelephoneFill } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdWorkOutline } from "react-icons/md";
+import { motion } from 'framer-motion'
 
 export const Footer = () => {
   return (
@@ -20,30 +21,38 @@ export const Footer = () => {
             <li className={styles.li}>{<BsFillTelephoneFill />}<a className={styles.a} href='#contact'>Contact</a></li>
         </ul>
         <div className={styles.images}>
-          <a href='https://twitter.com/matiasfci'>
+          <motion.a 
+          whileHover={{scale: 1.2}}
+          href='https://twitter.com/matiasfci'>
             <Image 
             src={twitter}
             width={60}
             height={60}/>
-          </a>
-          <a href='https://www.linkedin.com/in/matiasvaldez1/'>
+          </motion.a>
+          <motion.a 
+          whileHover={{scale: 1.2}}
+          href='https://www.linkedin.com/in/matiasvaldez1/'>
             <Image 
             src={linkedin}
             width={60}
             height={60}/>
-          </a>
-          <a href='https://mail.google.com/mail/?view=cm&source=mailto&to=matiasvaldez8184@gmail.com'>
+          </motion.a>
+          <motion.a
+          whileHover={{scale: 1.2}}
+          href='https://mail.google.com/mail/?view=cm&source=mailto&to=matiasvaldez8184@gmail.com'>
             <Image 
             src={gmail}
             width={60}
             height={60}/>
-          </a>
-          <a href='https://github.com/matiasvaldez1'>
+          </motion.a>
+          <motion.a 
+          whileHover={{scale: 1.2}}
+          href='https://github.com/matiasvaldez1'>
             <Image 
             src={github}
             width={60}
             height={60}/>
-          </a>
+          </motion.a>
         </div>
         </footer>
     </div>

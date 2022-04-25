@@ -1,6 +1,7 @@
 .pos{
     margin-top: 60vh;
     color: white;
+    overflow-x: hidden;
 }
 .img{
     display: flex;
@@ -41,4 +42,13 @@
 }
 .btn:hover{
     background-image: linear-gradient(90deg, var(--color-1) , var(--color-2));
+}
+.btn:active{
+    transform: translateY(-1);
+}
+.textarea{
+    resize: none;
+    margin: 8px 0;
+    border-radius: 10px;
+    height: 8rem;
 }

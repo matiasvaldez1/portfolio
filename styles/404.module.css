@@ -1,5 +1,5 @@
 .body{
-    background-image: none;
+    overflow: hidden;
 }
 .bg{
     background-color: var(--color-4);
@@ -8,4 +8,15 @@
 .pos{
     display: flex;
     justify-content: center;
+}
+.link{
+    color: white;
+    background-color: var(--color-1);
+    width: fit-content;
+    padding: 10px;
+    border-radius: 2px;
+    margin: auto;
+}
+.link:hover{
+    opacity: .8;
 }

@@ -1,10 +1,17 @@
 import React from 'react'
 import styles from './Card.module.css'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { AiFillGithub,AiOutlineRocket } from "react-icons/ai";
+import { GrDeploy } from "react-icons/gr";
 
 export const Card = ({image,title,github,deploy}) => {
   return (
-    <div id='projects' className={styles.container}>
+    <motion.div 
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{duration: 1}}
+    className={styles.container}>
       <img 
       src={image}
       className={styles.img}
@@ -12,10 +19,10 @@ export const Card = ({image,title,github,deploy}) => {
       <div className={styles.text}>
         <h2>{title}</h2>
         <div className={styles.links}>
-          <a href={github}>Github</a>
-          <a href={deploy}>Deploy</a>
+          <a className={styles.a} href={github}>{<AiFillGithub/>} Github</a>
+          <a className={styles.a} href={deploy}>{<AiOutlineRocket/>} Deploy</a>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
