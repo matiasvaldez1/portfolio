@@ -37,7 +37,7 @@ export const About = () => {
                   me reach that goal, such <br/>
                   as Three Js or UI/UX design. <br/>
                   You can follow my journey <br/>
-                  following in my social <br/>
+                  by following in my social <br/>
                   media where I will be <br/>
                   posting my progress. <br/>
                 </p>
