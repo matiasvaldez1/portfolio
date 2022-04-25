@@ -30,4 +30,10 @@
     .img{
         margin: auto 0;
     }
+    .p{
+        font-size: small;
+    }
+    .h1{
+        font-size: x-large;
+    }
   }

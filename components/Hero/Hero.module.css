@@ -8,6 +8,7 @@
 .pos{
     display: flex;
     justify-content: center;
+    padding-left: 10rem;
     margin-top: 5rem;
     overflow-x: hidden;
 }
@@ -68,6 +69,7 @@
 }
 @media (max-width: 600px) {
   .pos{
+    padding-left: 0;
     text-align: center;
     margin-top: 10rem;
   }

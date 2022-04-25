@@ -11,7 +11,7 @@ export const Hero = () => {
       <div className={styles.pos}>
         <motion.div
           initial={{ x: 1000 }}
-          animate={{x: 100}}
+          animate={{x: 0}}
           transition={{duration: 1}}
           drag="x"
           dragConstraints={{ left: -100, right: 100 }}
