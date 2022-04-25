@@ -27,3 +27,16 @@
   .a:hover{
     color:var(--color-2);
   }
+  @media (max-width: 600px) {
+    .ul{
+      display: inline-flex;
+      max-width: 100%;
+    }
+    .li{
+      margin: 0;
+    }
+    .pos > footer > .ul{
+      display: flex;
+      justify-content: center;
+    }
+  }

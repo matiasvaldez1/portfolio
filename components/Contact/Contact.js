@@ -41,14 +41,14 @@ export const Contact = () => {
             <div className={styles.grid}>
             <div>
                 <h2>Get in touch</h2>
-                <p>
-                I'm very approchable and <br />
+                <p className={styles.p}>
+                I am very approchable and <br />
                 would love to speak with you. <br />
                 Fell free to send me an email <br />
                 contact me through my social media <br />
                 or simply complete the enquiry form
                 </p>
-                <p>{<AiOutlineMail />} matiasvaldez8184@gmail.com</p>
+                <p className={styles.mail}>{<AiOutlineMail className={styles.mail} />} matiasvaldez8184@gmail.com</p>
             </div>
             <div className={styles.inputs}>
                 <h2>Send me a message</h2>
@@ -63,7 +63,13 @@ export const Contact = () => {
                     required
                 />
                 <button className={styles.btn} type="submit">Send message</button>
-                {show && <p>Your mail has been sent succesfully!</p>}
+                {show &&
+                <motion.p 
+                initial={{opacity:0}} 
+                animate={{opacity:1}}
+                transition={{duration:0.6}}>
+                    Your mail has been sent succesfully!
+                </motion.p>}
                 </form>
             </div>
             </div>

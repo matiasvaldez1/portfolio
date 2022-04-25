@@ -14,3 +14,12 @@
     padding-top: 2rem;
     padding-right: 3rem;
 }
+@media (max-width: 1000px) {
+    .bg{
+        width: 100%;
+        height: 27rem;
+    }
+    .img{
+        margin: auto 0;
+    }
+  }

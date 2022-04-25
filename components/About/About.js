@@ -15,6 +15,7 @@ export const About = () => {
         className={styles.bg}>
             <motion.div
             whileHover={{ scale: 1.1 }} 
+            className={styles.img}
             >
                 <Image
                 src={avatar} 

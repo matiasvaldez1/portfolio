@@ -18,3 +18,16 @@
   .a:hover{
     color:var(--color-2);
   }
+  @media (max-width: 600px) {
+    .ul{
+      display: inline-flex;
+      max-width: 100%;
+    }
+    .nav{
+      display: flex;
+      justify-content: center;
+    }
+    .li{
+      margin: 0;
+    }
+  }
