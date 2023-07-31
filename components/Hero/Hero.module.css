@@ -1,45 +1,45 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:900");
 
-.container{
-    color: white;
-    font-size: x-large;
-    user-select: none;
+.container {
+  color: white;
+  font-size: x-large;
+  user-select: none;
 }
-.pos{
-    display: flex;
-    justify-content: center;
-    padding-left: 10rem;
-    margin-top: 5rem;
-    overflow-x: hidden;
+.pos {
+  display: flex;
+  justify-content: center;
+  padding-left: 10rem;
+  margin-top: 5rem;
+  overflow-x: hidden;
 }
-.containerBtn{
-    display: flex; 
-    justify-content: center;
-    gap: 1rem;
+.containerBtn {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
-.btnCv{
-    color: white;
-    background-image: linear-gradient(90deg, var(--color-2) , var(--color-1));
-    border: none;
-    border-radius: 20px;
-    padding: 12px;
-    cursor: pointer;
-    font-size: medium;
+.btnCv {
+  color: white;
+  background-image: linear-gradient(90deg, var(--color-2), var(--color-1));
+  border: none;
+  border-radius: 20px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: medium;
 }
-.btnCv:hover{
-    background-image: linear-gradient(90deg, var(--color-1) , var(--color-2));
+.btnCv:hover {
+  background-image: linear-gradient(90deg, var(--color-1), var(--color-2));
 }
-.btnSeeMore{
-    color: white;
-    background-color: gray;
-    border: none;
-    border-radius: 20px;
-    padding: 12px;
-    cursor: pointer;
-    font-size: medium;
+.btnSeeMore {
+  color: white;
+  background-color: lightskyblue;
+  border: none;
+  border-radius: 20px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: medium;
 }
-.btnSeeMore:hover{
-    opacity: .6;
+.btnSeeMore:hover {
+  opacity: 0.6;
 }
 
 .div {
@@ -48,7 +48,7 @@
   font-size: x-large;
 }
 
-.h1{
+.h1 {
   font-family: "Montserrat", sans-serif;
   color: white;
   background-image: url("https://img.freepik.com/free-vector/painted-background-multicoloured-palette_23-2148427592.jpg?w=2000");
@@ -57,6 +57,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 6s linear infinite;
+}
+
+.h1Wrapp {
+  font-size: 4rem;
+  font-weight: bold;
 }
 
 @keyframes shine {
@@ -68,7 +73,7 @@
   }
 }
 @media (max-width: 600px) {
-  .pos{
+  .pos {
     padding-left: 0;
     text-align: center;
     margin-top: 10rem;

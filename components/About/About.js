@@ -1,49 +1,39 @@
-import React from 'react'
-import styles from './About.module.css'
-import avatar from '../../public/assets/Music-pana.png'
-import Image from 'next/image'
-import {motion} from 'framer-motion'
+import React from "react";
+import styles from "./About.module.css";
+import avatar from "../../public/assets/Music-pana.png";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const About = () => {
   return (
-      <>
+    <>
       <div className={styles.pos}>
-        <motion.div 
-        initial={{opacity: 0}}
-        whileInView={{opacity: 1}}
-        transition={{duration: 1}}
-        className={styles.bg}>
-            <motion.div
-            whileHover={{ scale: 1.1 }} 
-            className={styles.img}
-            >
-                <Image
-                src={avatar} 
-                alt={"avatar"}
-                height={500}
-                width={300}
-                />
-            </motion.div>
-            <div className={styles.text}>
-                <h1 className={styles.h1}>About me</h1>
-                <p className={styles.p}>
-                  Lately Ive been more <br/>
-                  interested in developing <br/>
-                  my skils as a creative UI <br/>
-                  developer,thats why re- <br/>
-                  cently Ive started my <br/>
-                  journey learning <br/>
-                  technologies that help <br/>
-                  me reach that goal, such <br/>
-                  as Three Js or UI/UX design. <br/>
-                  You can follow my journey <br/>
-                  by following in my social <br/>
-                  media where I will be <br/>
-                  posting my progress. <br/>
-                </p>
-            </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className={styles.bg}
+        >
+          <motion.div whileHover={{ scale: 1.1 }} className={styles.img}>
+            <Image src={avatar} alt={"avatar"} height={500} width={300} />
+          </motion.div>
+          <div className={styles.text}>
+            <h1 className={styles.h1}>About me</h1>
+            <p className={styles.p}>
+              Lately, I've been focusing <br /> on enhancing my skills <br /> to
+              become a better developer. <br /> As a part of this effort, <br />{" "}
+              I've recently embarked on a journey <br /> to explore various
+              career paths <br /> that align with my goal. <br /> I am delving
+              into subjects like <br /> design patterns, clean code, <br />
+              testing, and more. <br /> If you're interested in <br /> following
+              my progress, <br />
+              you can do so by connecting <br /> with me on GitHub or <br />{" "}
+              LinkedIn, where I'll be sharing <br />
+              updates about my journey.
+            </p>
+          </div>
         </motion.div>
-    </div>
+      </div>
     </>
-  )
-}
+  );
+};

@@ -18,10 +18,10 @@ export const Hero = () => {
           className={styles.container}
         >
           <div>
-            <h1>
+            <h1 className={styles.h1Wrapp}>
               <a className={styles.h1}>Frontend Developer</a> <br />
               Matias Valdez <br />
-              Based on Buenos Aires
+              Based in Buenos Aires
             </h1>
           </div>
           <div className={styles.containerBtn}>
@@ -29,7 +29,7 @@ export const Hero = () => {
               <a href="#about">See more</a>
             </button>
             <button className={styles.btnCv}>
-              <a href={cv} download={"Matias_Valdez_CV"}>
+              <a href={process.env.NEXT_PUBLIC_LINK_CV}>
                 Download CV
               </a>
             </button>

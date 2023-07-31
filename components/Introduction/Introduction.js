@@ -30,8 +30,10 @@ export const Introduction = () => {
         </div>
         <h2>
           My working tools: <br />
-          React JS, Next JS, Typescrypt, <br />
-          Tailwind Css, Sass and more..
+          React, Next JS, Typescrypt, <br />
+          GraphQl, Apollo, Tailwind Css, <br />
+          Styled Components, Node Js, <br />
+          Postgresql and more.
         </h2>
       </motion.div>
       <motion.div 
