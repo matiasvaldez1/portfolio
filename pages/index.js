@@ -43,7 +43,7 @@ export default function Home({ projectsProps }) {
 
 export const getStaticProps = async () => {
   const projects = await scrapeGoogleSheet(
-    "https://docs.google.com/spreadsheets/d/1l7zY1SSY1F-KK1hc3s_CNR1fWSQaHI5lp8Vj4LdWsZ4/gviz/tq?tqx=out:csv"
+    process.env.NEXT_PUBLIC_LINK_DRIVE
   );
   return {
     props: {
