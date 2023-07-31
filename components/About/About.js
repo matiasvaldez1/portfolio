@@ -20,15 +20,15 @@ export const About = () => {
           <div className={styles.text}>
             <h1 className={styles.h1}>About me</h1>
             <p className={styles.p}>
-              Lately, I've been focusing <br /> on enhancing my skills <br /> to
+              Lately, I&apos;ve been focusing <br /> on enhancing my skills <br /> to
               become a better developer. <br /> As a part of this effort, <br />{" "}
-              I've recently embarked on a journey <br /> to explore various
+              I&apos;ve recently embarked on a journey <br /> to explore various
               career paths <br /> that align with my goal. <br /> I am delving
               into subjects like <br /> design patterns, clean code, <br />
-              testing, and more. <br /> If you're interested in <br /> following
+              testing, and more. <br /> If you&apos;re interested in <br /> following
               my progress, <br />
               you can do so by connecting <br /> with me on GitHub or <br />{" "}
-              LinkedIn, where I'll be sharing <br />
+              LinkedIn, where I&apos;ll be sharing <br />
               updates about my journey.
             </p>
           </div>
