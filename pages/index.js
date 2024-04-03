@@ -17,8 +17,8 @@ export default function Home({ projectsProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <Introduction />
-      <About />
+          <Introduction />
+          <About />
       <div id="projects" className={styles.container}>
         <h1 className={styles.title}>My recent work</h1>
         <div className={styles.grid}>
