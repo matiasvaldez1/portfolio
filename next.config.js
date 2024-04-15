@@ -6,6 +6,7 @@ const nextConfig = {
 module.exports = {
   nextConfig,
   webpack: (config, options) => {
+    config.module.generator.asset.publicPath = "/_next/";
     config.module.rules.push({
       test: /\.pdf/,
       type: 'asset/resource',
@@ -17,3 +18,4 @@ module.exports = {
     return config
 },
 }
+
