@@ -38,7 +38,7 @@ export const Contact = () => {
             <div className={styles.emailSection}>
                 <h2 className={styles.h2}>Get in touch</h2>
                 <p className={styles.p}>
-                    I'm always open to discussing new opportunities, <br />
+                    I&apos;m always open to discussing new opportunities, <br />
                     collaborations, or just having a chat about web development. <br />
                     Feel free to reach out to me directly via email.
                 </p>

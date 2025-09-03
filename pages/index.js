@@ -21,7 +21,7 @@ export default function Home({ personalProjects, professionalProjects }) {
           <About />
       <div id="projects" className={styles.container}>
         <h1 className={styles.title}>Personal Projects</h1>
-        <p className={styles.subtitle}>Projects I've built to learn and explore new technologies</p>
+        <p className={styles.subtitle}>Projects I&apos;ve built to learn and explore new technologies</p>
         <div className={styles.grid}>
           {personalProjects?.map((project, k) => {
             return (
@@ -39,7 +39,7 @@ export default function Home({ personalProjects, professionalProjects }) {
       
       <div id="professional-projects" className={styles.container}>
         <h1 className={styles.title}>Professional Work</h1>
-        <p className={styles.subtitle}>Client projects and professional websites I've developed</p>
+        <p className={styles.subtitle}>Client projects and professional websites I&apos;ve developed</p>
         <div className={styles.grid}>
           {professionalProjects?.map((project, k) => {
             return (
