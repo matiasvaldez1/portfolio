@@ -12,8 +12,11 @@ export const Card = ({image,title,github,deploy}) => {
     whileInView={{ opacity: 1 }}
     transition={{duration: 1}}
     className={styles.container}>
-      <img 
+      <Image 
       src={image}
+      alt={title || "Project image"}
+      width={320}
+      height={180}
       className={styles.img}
       />
       <div className={styles.text}>
