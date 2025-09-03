@@ -23,4 +23,22 @@ async function scrapeGoogleSheet(url) {
   }
 }
 
-module.exports = { scrapeGoogleSheet };
+async function scrapePersonalProjects() {
+  const url = process.env.NEXT_PUBLIC_LINK_PERSONAL_PROJECTS;
+  if (!url || url.includes('your-') || url === 'undefined') {
+    console.warn('Personal projects Google Sheet URL not configured');
+    return [];
+  }
+  return await scrapeGoogleSheet(url);
+}
+
+async function scrapeProfessionalProjects() {
+  const url = process.env.NEXT_PUBLIC_LINK_PROFESSIONAL_PROJECTS;
+  if (!url || url.includes('your-') || url === 'undefined') {
+    console.warn('Professional projects Google Sheet URL not configured');
+    return [];
+  }
+  return await scrapeGoogleSheet(url);
+}
+
+module.exports = { scrapeGoogleSheet, scrapePersonalProjects, scrapeProfessionalProjects };

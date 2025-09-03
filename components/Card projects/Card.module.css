@@ -1,26 +1,103 @@
-.img{
-    height: 200px;
-    width: 300px;
-    border-radius: 4px;
-}
-.img:hover{
-    opacity: .7;
-}
 .container{
-    color:white;
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    height: fit-content;
+    max-width: 320px;
+    width: 100%;
 }
+
+.container:hover{
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.img{
+    height: 180px;
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.img:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
 .text{
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
+
+.text h2{
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .links{
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 0;
 }
+
+.a{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .a:hover{
-    color:var(--color-2)
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    border: 1px solid transparent;
+}
+
+.a svg{
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    .container{
+        max-width: 280px;
+        padding: 1.2rem;
+    }
+    
+    .img{
+        height: 160px;
+    }
+    
+    .text h2{
+        font-size: 1.2em;
+    }
+    
+    .a{
+        padding: 0.6rem 1rem;
+        font-size: 0.85em;
+    }
 }

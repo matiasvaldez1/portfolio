@@ -14,22 +14,23 @@ export const About = () => {
           transition={{ duration: 1 }}
           className={styles.bg}
         >
-          <motion.div whileHover={{ scale: 1.1 }} className={styles.img}>
+          <div className={styles.img}>
             <Image src={avatar} alt={"avatar"} height={500} width={300} />
-          </motion.div>
+          </div>
           <div className={styles.text}>
             <h1 className={styles.h1}>About me</h1>
             <p className={styles.p}>
-              Lately, I&apos;ve been focusing <br /> on enhancing my skills <br /> to
-              become a better developer. <br /> As a part of this effort, <br />{" "}
-              I&apos;ve recently embarked on a journey <br /> to explore various
-              career paths <br /> that align with my goal. <br /> I am delving
-              into subjects like <br /> design patterns, clean code, <br />
-              testing, and more. <br /> If you&apos;re interested in <br /> following
-              my progress, <br />
-              you can do so by connecting <br /> with me on GitHub or <br />{" "}
-              LinkedIn, where I&apos;ll be sharing <br />
-              updates about my journey.
+              I am a frontend web developer <br /> based in Buenos Aires, Argentina. <br />
+              With strong problem-solving skills, <br /> I bring a wealth of experience <br />
+              in building, developing, and managing <br /> various platforms and websites. <br /><br />
+              
+              Throughout my professional journey, <br /> I&apos;ve worked with companies like <br />
+              Gohub, GMO Solutions, FJ Solutions, <br /> and Conversion Flow, where I&apos;ve <br />
+              developed Shopify integrations, <br /> optimized payment systems, and <br />
+              led A/B testing experiments. <br /><br />
+              
+              I&apos;m passionate about creating <br /> seamless user experiences <br />
+              and building scalable web solutions <br /> that drive business growth.
             </p>
           </div>
         </motion.div>

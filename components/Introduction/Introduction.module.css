@@ -3,6 +3,9 @@
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+    padding: 0 2rem;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 .bg{
     border-radius: 5px;
@@ -10,6 +13,8 @@
     width: 30%;
     height: 30rem;
     margin-left: 4rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 .cat{
     height: 100%;
@@ -23,21 +28,85 @@
     font-size: 2.3em;
 }
 .h2{
-    color:#5ad67b
+    color:#5ad67b;
 }
 .h3{
-    color:#70d3fa
+    color:#70d3fa;
 }
-@media (max-width: 600px) {
+@media (max-width: 1400px) and (min-width: 1025px) {
+    .pos{
+        padding: 0 1rem;
+    }
+    .bg{
+        width: 45%;
+        height: auto;
+        min-height: 30rem;
+        margin-left: 2rem;
+        padding: 1rem;
+    }
+    .bg h2{
+        font-size: 1.3em;
+        line-height: 1.4;
+    }
+    .cat{
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .pos{
+        padding: 0 1rem;
+    }
+    .bg{
+        width: 50%;
+        height: auto;
+        min-height: 30rem;
+        margin-left: 1rem;
+        padding: 1rem;
+    }
+    .bg h2{
+        font-size: 1.2em;
+        line-height: 1.4;
+    }
+    .cat{
+        margin-right: 1rem;
+        max-width: 45%;
+    }
+    .cat img{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
     .pos{
         flex-direction: column;
+        margin-top: 8rem;
+        padding: 0 1rem;
+        overflow-x: hidden;
     }
     .bg{
         margin: 0;
         width: 100%;
         text-align: center;
+        height: auto;
+        padding: 1rem;
+        margin-left: 0;
+    }
+    .bg h2{
+        font-size: 1.1em;
+        line-height: 1.4;
+        margin: 1rem 0;
+    }
+    .h1Size{
+        font-size: 1.8em;
     }
     .cat{
-        margin:0 auto;
+        margin: 2rem auto 0 auto;
+        max-width: 100%;
     }
-  }
+    .cat img{
+        max-width: 100%;
+        height: auto;
+    }
+}

@@ -29,7 +29,7 @@ export const Hero = () => {
               <a href="#about">See more</a>
             </button>
             <button className={styles.btnCv}>
-              <a href={process.env.NEXT_PUBLIC_LINK_CV}>
+              <a href={process.env.NEXT_PUBLIC_LINK_CV} target="_blank" rel="noopener noreferrer">
                 Download CV
               </a>
             </button>

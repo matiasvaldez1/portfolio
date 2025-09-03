@@ -19,8 +19,12 @@ export const Card = ({image,title,github,deploy}) => {
       <div className={styles.text}>
         <h2>{title}</h2>
         <div className={styles.links}>
-          <a className={styles.a} href={github}>{<AiFillGithub/>} Github</a>
-          <a className={styles.a} href={deploy}>{<AiOutlineRocket/>} Deploy</a>
+          {github && (
+            <a className={styles.a} href={github} target="_blank" rel="noopener noreferrer">{<AiFillGithub/>} Github</a>
+          )}
+          {deploy && (
+            <a className={styles.a} href={deploy} target="_blank" rel="noopener noreferrer">{<AiOutlineRocket/>} Deploy</a>
+          )}
         </div>
       </div>
     </motion.div>

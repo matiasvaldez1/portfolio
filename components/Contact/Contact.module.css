@@ -1,5 +1,5 @@
 .pos{
-    margin-top: 60vh;
+    margin-top: 30vh;
     color: white;
     overflow-x: hidden;
 }
@@ -11,49 +11,74 @@
     text-align: center;
     font-size: 2.5em;
 }
-.grid{
-    display: grid;
-    grid-template-columns: repeat(2,minmax(300px,1fr));
-    justify-items: center;
-    background-color: rgb(28,28,101,.8);
-    width: 60%;
-    margin: auto;
-    height: 30rem;
-    border-radius: 20px;
-    color: white;
-}
-.inputs{
+.contactContent{
     display: flex;
-    flex-direction: column;
-}
-.input{
-    margin: 8px 0;
-    border-radius: 10px;
-    height: 35px;
-    outline-color: var(--color-2);
-}
-.btn{
-    color: white;
-    background-image: linear-gradient(90deg, var(--color-2) , var(--color-1));
-    border: none;
-    border-radius: 20px;
-    padding: 8px;
-    width: fit-content;
+    justify-content: center;
+    width: 100%;
     margin: auto;
+}
+
+.emailSection{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    color: white;
+}
+
+.emailContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mailIcon{
+    font-size: 1.5em;
+    color: #667eea;
+}
+
+.emailLink{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.copyButton{
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem;
+    color: white;
     cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
 }
-.btn:hover{
-    background-image: linear-gradient(90deg, var(--color-1) , var(--color-2));
+
+.copyButton:hover{
+    background: rgba(255, 255, 255, 0.2);
+    color: #667eea;
 }
-.btn:active{
-    transform: translateY(-1);
-}
-.textarea{
-    resize: none;
-    margin: 8px 0;
-    border-radius: 10px;
-    height: 8rem;
-    outline-color: var(--color-2);
+
+.copiedMessage{
+    color: #4ade80;
+    font-size: 0.9em;
+    margin-top: 1rem;
+    font-weight: 500;
 }
 .p{
     line-height: 1.2;
@@ -61,10 +86,84 @@
 .h2{
     font-size: 1.8em;
 }
-@media (max-width: 1000px) {
-    .grid{
-        grid-template-columns: repeat(1,1fr);
-        width: 90%;
-        height: fit-content;
+@media (max-width: 768px) {
+    .pos{
+        margin-top: 20vh;
+        padding: 0 1rem;
+        overflow-x: hidden;
+    }
+    
+    .contactContent{
+        width: 100%;
+        padding: 0;
+    }
+    
+    .emailSection{
+        padding: 1.5rem 1rem;
+        width: 100%;
+        margin: 0;
+        max-width: none;
+    }
+    
+    .emailContainer{
+        flex-direction: row;
+        gap: 0.8rem;
+        padding: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .emailLink{
+        font-size: 0.95em;
+        word-break: break-all;
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .copyButton{
+        flex-shrink: 0;
+    }
+    
+    .text{
+        font-size: 1.8em;
+        margin-bottom: 1rem;
+    }
+    
+    .h2{
+        font-size: 1.3em;
+        margin-bottom: 1rem;
+    }
+    
+    .p{
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+    
+    .img{
+        margin-bottom: 2rem;
+    }
+    
+    .img img{
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .emailContainer{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .emailLink{
+        font-size: 0.85em;
+        text-align: center;
+    }
+    
+    .text{
+        font-size: 1.5em;
     }
 }

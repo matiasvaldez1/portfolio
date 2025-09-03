@@ -32,6 +32,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100vw;
+}
 :root{
   --color-1: #2954A3;
   --color-2: #e771ff;

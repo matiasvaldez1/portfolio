@@ -72,10 +72,46 @@
     background-position: center 200%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .pos {
-    padding-left: 0;
+    padding: 0 1rem;
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 8rem;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+  
+  .h1Wrapp {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .containerBtn {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .btnCv, .btnSeeMore {
+    width: 200px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .h1Wrapp {
+    font-size: 2rem;
+  }
+  
+  .container {
+    font-size: large;
   }
 }

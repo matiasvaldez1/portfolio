@@ -18,22 +18,21 @@ export const Introduction = () => {
         <h1 className={`${styles.h1} ${styles.h1Size}`}>Who am I?</h1>
         <div>
           <h2>
-            My name is Matias valdez, <br />
-            a creative <a className={styles.h3}>Frontend developer</a> with <br />
-            knowledge about backend. <br />
-            Although my main focus as
-            <br />
-            developer is to provide to <br />
-            the user the most <a className={styles.h1}>interactive</a> <br />
-            and <a className={styles.h2}>simpler</a> experience.
+            My name is Matias Ezequiel Valdez, <br />
+            a <a className={styles.h3}>Frontend Web Developer</a> <br />
+            based in Buenos Aires, Argentina. <br />
+            With <a className={styles.h1}>strong problem-solving skills</a>, <br />
+            I bring a wealth of experience in <br />
+            building, developing, and managing <br />
+            <a className={styles.h2}>various platforms and websites</a>.
           </h2>
         </div>
         <h2>
-          My working tools: <br />
-          React, Next JS, Typescrypt, <br />
-          GraphQl, Apollo, Tailwind Css, <br />
-          Styled Components, Node Js, <br />
-          Postgresql and more.
+          My tech stack: <br />
+          TypeScript, React, Next.js, <br />
+          Remix, Shopify, GraphQL, <br />
+          Node.js, PostgreSQL, <br />
+          Tailwind CSS, Docker and more.
         </h2>
       </motion.div>
       <motion.div 

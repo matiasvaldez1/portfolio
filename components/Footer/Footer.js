@@ -22,7 +22,9 @@ export const Footer = () => {
         <div className={styles.images}>
           <motion.a 
           whileHover={{scale: 1.2}}
-          href='https://www.linkedin.com/in/matiasvaldez1/'>
+          href='https://www.linkedin.com/in/matiasvaldez1/'
+          target="_blank"
+          rel="noopener noreferrer">
             <Image 
             src={linkedin}
             alt={"linkedin"}
@@ -31,7 +33,9 @@ export const Footer = () => {
           </motion.a>
           <motion.a
           whileHover={{scale: 1.2}}
-          href='https://mail.google.com/mail/?view=cm&source=mailto&to=matiasvaldez8184@gmail.com'>
+          href='https://mail.google.com/mail/?view=cm&source=mailto&to=matiasvaldez8184@gmail.com'
+          target="_blank"
+          rel="noopener noreferrer">
             <Image 
             src={gmail}
             alt={"gmail"}
@@ -40,7 +44,9 @@ export const Footer = () => {
           </motion.a>
           <motion.a 
           whileHover={{scale: 1.2}}
-          href='https://github.com/matiasvaldez1'>
+          href='https://github.com/matiasvaldez1'
+          target="_blank"
+          rel="noopener noreferrer">
             <Image 
             src={github}
             alt={"github"}

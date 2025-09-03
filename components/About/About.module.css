@@ -1,15 +1,19 @@
 .bg{
     background-image: linear-gradient(150deg, var(--color-2), #249743);
-    height: 38em;
-    width: 38em;
+    height: 40em;
+    width: 42em;
     border-radius: 100vw;
     margin: auto;
     display: flex;
     justify-content: center;
     color: rgb(255, 255, 255);
+    max-width: calc(100vw - 2rem);
+    box-sizing: border-box;
 }
 .pos{
     margin-top: 10rem;
+    padding: 0 1rem;
+    overflow-x: hidden;
 }
 .text{
     padding-top: 2rem;
@@ -25,16 +29,55 @@
 
 @media (max-width: 1000px) {
     .bg{
-        width: 100%;
-        height: 27rem;
+        width: 95%;
+        height: auto;
+        min-height: 27rem;
+        padding: 2rem 1rem;
+        border-radius: 20px;
+        flex-direction: column;
+        text-align: center;
     }
     .img{
-        margin: auto 0;
+        margin: 1rem auto;
+        max-width: 100%;
+    }
+    .img img{
+        max-width: 100%;
+        height: auto;
+    }
+    .text{
+        padding: 1rem;
+        max-width: 100%;
     }
     .p{
-        font-size: small;
+        font-size: 0.9em;
+        line-height: 1.5;
+        margin: 1rem 0;
     }
     .h1{
-        font-size: x-large;
+        font-size: 1.5em;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .pos{
+        margin-top: 5rem;
+        padding: 0 0.5rem;
+    }
+    .bg{
+        width: 100%;
+        margin: 0;
+        padding: 1.5rem 0.8rem;
+    }
+    .text{
+        padding: 0.5rem;
+    }
+    .p{
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+    .h1{
+        font-size: 1.3em;
     }
 }
