@@ -24,7 +24,7 @@ export const Contact = () => {
             transition={{ duration: 1 }}
             className={styles.text}
         >
-            Let's talk!
+            Let&apos;s talk!
         </motion.h1>
         <motion.div
             initial={{ x: -200 }}
