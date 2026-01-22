@@ -15,7 +15,7 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <p className={styles.greeting}>Hello, I'm</p>
+            <p className={styles.greeting}>Hello, I&apos;m</p>
             <h1 className={styles.name}>
               <span className={styles.gradientText}>Matias Valdez</span>
             </h1>
