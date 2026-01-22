@@ -1,41 +1,58 @@
-import React from "react";
-import { NavBar } from "../NavBar/NavBar";
-import styles from "./Hero.module.css";
-import cv from "../../public/assets/MatiasCv.pdf";
-import { motion } from "framer-motion";
+import React from 'react'
+import { NavBar } from '../NavBar/NavBar'
+import styles from './Hero.module.css'
+import { motion } from 'framer-motion'
 
 export const Hero = () => {
   return (
     <>
       <NavBar />
-      <div className={styles.pos}>
-        <motion.div
-          initial={{ x: 1000 }}
-          animate={{x: 0}}
-          transition={{duration: 1}}
-          drag="x"
-          dragConstraints={{ left: -100, right: 100 }}
-          className={styles.container}
-        >
-          <div>
-            <h1 className={styles.h1Wrapp}>
-              <a className={styles.h1}>Frontend Developer</a> <br />
-              Matias Valdez <br />
-              Based in Buenos Aires
+      <section className={styles.hero}>
+        <div className={styles.content}>
+          <motion.div
+            className={styles.textContainer}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <p className={styles.greeting}>Hello, I'm</p>
+            <h1 className={styles.name}>
+              <span className={styles.gradientText}>Matias Valdez</span>
             </h1>
-          </div>
-          <div className={styles.containerBtn}>
-            <button className={styles.btnSeeMore}>
-              <a href="#about">See more</a>
-            </button>
-            <button className={styles.btnCv}>
-              <a href={process.env.NEXT_PUBLIC_LINK_CV} target="_blank" rel="noopener noreferrer">
-                Download CV
-              </a>
-            </button>
-          </div>
-        </motion.div>
-      </div>
+            <p className={styles.title}>Frontend Developer</p>
+            <p className={styles.location}>Based in Buenos Aires</p>
+          </motion.div>
+
+          <motion.div
+            className={styles.buttons}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+          >
+            <a href="#about" className={styles.btnPrimary}>
+              Explore my work
+            </a>
+            <a
+              href={process.env.NEXT_PUBLIC_LINK_CV}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnSecondary}
+            >
+              Download CV
+            </a>
+          </motion.div>
+
+          <motion.div
+            className={styles.scrollIndicator}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.5 }}
+          >
+            <span className={styles.scrollText}>Scroll</span>
+            <div className={styles.scrollLine} />
+          </motion.div>
+        </div>
+      </section>
     </>
-  );
-};
+  )
+}

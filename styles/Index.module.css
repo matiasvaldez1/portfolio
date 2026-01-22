@@ -1,64 +1,61 @@
-.grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+.container {
+  position: relative;
+  padding: 6rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #e771ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin: 0 auto 4rem auto;
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
     gap: 2rem;
-    justify-items: center;
-    align-items: start;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.container{
-    margin-top: 10rem;
-    padding: 0 2rem;
-}
-
-.title{
-    text-align: center;
-    color: white;
-    margin: 4rem 0 1rem 0;
-    font-size: 2.8em;
-    font-weight: 600;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.subtitle{
-    text-align: center;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 auto 3rem auto;
-    font-size: 1.2em;
-    font-weight: 300;
-    max-width: 600px;
-    line-height: 1.5;
-}
-
-@media (max-width: 1200px) {
-    .grid{
-        grid-template-columns: repeat(2, 1fr);
-    }
+  }
 }
 
 @media (max-width: 768px) {
-    .grid{
-        grid-template-columns: repeat(1, 1fr);
-        gap: 3rem;
-    }
-    
-    .title{
-        font-size: 2.2em;
-    }
-}
+  .container {
+    padding: 4rem 1.5rem;
+  }
 
-@media (max-width: 600px) {
-    .container{
-        padding: 0 1rem;
-    }
-    
-    .grid{
-        padding: 0 1rem;
-    }
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 }

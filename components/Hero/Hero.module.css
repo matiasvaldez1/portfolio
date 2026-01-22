@@ -1,117 +1,159 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
-
-.container {
-  color: white;
-  font-size: x-large;
-  user-select: none;
-}
-.pos {
+.hero {
+  min-height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding-left: 10rem;
-  margin-top: 5rem;
-  overflow-x: hidden;
-}
-.containerBtn {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-.btnCv {
-  color: white;
-  background-image: linear-gradient(90deg, var(--color-2), var(--color-1));
-  border: none;
-  border-radius: 20px;
-  padding: 12px;
-  cursor: pointer;
-  font-size: medium;
-}
-.btnCv:hover {
-  background-image: linear-gradient(90deg, var(--color-1), var(--color-2));
-}
-.btnSeeMore {
-  color: white;
-  background-color: lightskyblue;
-  border: none;
-  border-radius: 20px;
-  padding: 12px;
-  cursor: pointer;
-  font-size: medium;
-}
-.btnSeeMore:hover {
-  opacity: 0.6;
-}
-
-.div {
-  background: radial-gradient(ellipse at bottom, #022227 0%, #000000 100%);
   position: relative;
-  font-size: x-large;
+  padding: 2rem;
 }
 
-.h1 {
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  background-image: url("https://img.freepik.com/free-vector/painted-background-multicoloured-palette_23-2148427592.jpg?w=2000");
-  background-size: auto 200%;
-  background-clip: text;
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+}
+
+.textContainer {
+  margin-bottom: 3rem;
+}
+
+.greeting {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #e771ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 6s linear infinite;
+  background-clip: text;
 }
 
-.h1Wrapp {
-  font-size: 4rem;
-  font-weight: bold;
+.title {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
 }
 
-@keyframes shine {
-  from {
-    background-position: center 0;
+.location {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: white;
+  border: none;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(231, 113, 255, 0.3);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.scrollIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scrollText {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent-purple),
+    transparent
+  );
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
   }
-  to {
-    background-position: center 200%;
+  50% {
+    opacity: 0.5;
+    transform: scaleY(0.8);
   }
 }
+
 @media (max-width: 768px) {
-  .pos {
-    padding: 0 1rem;
-    text-align: center;
-    margin-top: 8rem;
-    overflow-x: hidden;
+  .hero {
+    padding: 6rem 1.5rem 2rem;
   }
-  
-  .container {
-    max-width: 100%;
-    padding: 0 1rem;
-    box-sizing: border-box;
-  }
-  
-  .h1Wrapp {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .containerBtn {
+
+  .buttons {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
   }
-  
-  .btnCv, .btnSeeMore {
-    width: 200px;
-    max-width: 100%;
-  }
-}
 
-@media (max-width: 480px) {
-  .h1Wrapp {
-    font-size: 2rem;
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    max-width: 250px;
   }
-  
-  .container {
-    font-size: large;
+
+  .scrollIndicator {
+    display: none;
   }
 }

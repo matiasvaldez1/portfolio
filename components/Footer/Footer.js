@@ -1,60 +1,73 @@
 import React from 'react'
 import styles from './Footer.module.css'
-import Image from 'next/image'
-import github from '../../public/assets/github.png'
-import gmail from '../../public/assets/gmail.png'
-import linkedin from '../../public/assets/linkedin.png'
-import { BsHouseDoor,BsFillTelephoneFill } from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai";
-import { MdWorkOutline } from "react-icons/md";
-import { motion } from 'framer-motion'
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
+  const navLinks = [
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
+  ]
+
+  const socialLinks = [
+    {
+      href: 'https://www.linkedin.com/in/matiasvaldez1/',
+      icon: <FiLinkedin />,
+      label: 'LinkedIn',
+    },
+    {
+      href: 'https://github.com/matiasvaldez1',
+      icon: <FiGithub />,
+      label: 'GitHub',
+    },
+    {
+      href: 'mailto:matiasvaldez8184@gmail.com',
+      icon: <FiMail />,
+      label: 'Email',
+    },
+  ]
+
   return (
-    <div className={styles.pos}>
-        <footer>
-        <ul className={styles.ul}>
-            <li className={styles.li}>{<BsHouseDoor/>} <a className={styles.a} href='#home'>Home</a></li>
-            <li className={styles.li}>{<AiOutlineUser />}<a className={styles.a} href='#about'>About</a></li>
-            <li className={styles.li}>{<MdWorkOutline />}<a className={styles.a} href='#projects'>Projects</a></li>
-            <li className={styles.li}>{<BsFillTelephoneFill />}<a className={styles.a} href='#contact'>Contact</a></li>
-        </ul>
-        <div className={styles.images}>
-          <motion.a 
-          whileHover={{scale: 1.2}}
-          href='https://www.linkedin.com/in/matiasvaldez1/'
-          target="_blank"
-          rel="noopener noreferrer">
-            <Image 
-            src={linkedin}
-            alt={"linkedin"}
-            width={60}
-            height={60}/>
-          </motion.a>
-          <motion.a
-          whileHover={{scale: 1.2}}
-          href='https://mail.google.com/mail/?view=cm&source=mailto&to=matiasvaldez8184@gmail.com'
-          target="_blank"
-          rel="noopener noreferrer">
-            <Image 
-            src={gmail}
-            alt={"gmail"}
-            width={60}
-            height={60}/>
-          </motion.a>
-          <motion.a 
-          whileHover={{scale: 1.2}}
-          href='https://github.com/matiasvaldez1'
-          target="_blank"
-          rel="noopener noreferrer">
-            <Image 
-            src={github}
-            alt={"github"}
-            width={60}
-            height={60}/>
-          </motion.a>
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.top}>
+          <a href="#home" className={styles.logo}>
+            MV<span className={styles.logoDot}>.</span>
+          </a>
+
+          <nav className={styles.nav}>
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className={styles.navLink}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className={styles.socials}>
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label={link.label}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
-        </footer>
-    </div>
+
+        <div className={styles.bottom}>
+          <p className={styles.copyright}>
+            &copy; {currentYear} Matias Valdez. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   )
 }

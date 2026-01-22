@@ -1,77 +1,73 @@
-import React, { useState } from "react";
-import styles from "./Contact.module.css";
-import { AiOutlineMail } from "react-icons/ai";
-import { FiCopy, FiCheck } from "react-icons/fi";
-import workingAvatar from "../../public/assets/Computer.png";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import React, { useState } from 'react'
+import styles from './Contact.module.css'
+import { FiCopy, FiCheck, FiGithub, FiLinkedin } from 'react-icons/fi'
+import { motion } from 'framer-motion'
 
 export const Contact = () => {
-    const [copied, setCopied] = useState(false);
-    const email = "matiasvaldez8184@gmail.com";
+  const [copied, setCopied] = useState(false)
+  const email = 'matiasvaldez8184@gmail.com'
 
-    const copyToClipboard = () => {
-        navigator.clipboard.writeText(email);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-    };
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(email)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
 
-    return (
-        <div id="contact" className={styles.pos}>
-        <motion.h1
-            initial={{ x: 200 }}
-            whileInView={{ x: 0 }}
-            transition={{ duration: 1 }}
-            className={styles.text}
-        >
-            Let&apos;s talk!
-        </motion.h1>
+  return (
+    <section id="contact" className={styles.contact}>
+      <div className={styles.container}>
         <motion.div
-            initial={{ x: -200 }}
-            whileInView={{ x: 0 }}
-            transition={{ duration: 1 }}
-            className={styles.img}
+          className={styles.content}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
         >
-            <Image alt={"working avatar"} src={workingAvatar} width={350} height={350} />
+          <span className={styles.label}>Contact</span>
+          <h2 className={styles.title}>
+            Let&apos;s build something <br />
+            <span className={styles.gradientText}>together</span>
+          </h2>
+
+          <p className={styles.description}>
+            I&apos;m always open to discussing new projects, creative ideas,
+            or opportunities to be part of your vision.
+          </p>
+
+          <div className={styles.emailBox}>
+            <span className={styles.email}>{email}</span>
+            <button
+              onClick={copyToClipboard}
+              className={styles.copyButton}
+              title={copied ? 'Copied!' : 'Copy email'}
+            >
+              {copied ? <FiCheck /> : <FiCopy />}
+              <span>{copied ? 'Copied!' : 'Copy'}</span>
+            </button>
+          </div>
+
+          <div className={styles.socials}>
+            <a
+              href="https://www.linkedin.com/in/matiasvaldez1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              <FiLinkedin />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/matiasvaldez1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              <FiGithub />
+              <span>GitHub</span>
+            </a>
+          </div>
         </motion.div>
-        <div className={styles.contactContent}>
-            <div className={styles.emailSection}>
-                <h2 className={styles.h2}>Get in touch</h2>
-                <p className={styles.p}>
-                    I&apos;m always open to discussing new opportunities, <br />
-                    collaborations, or just having a chat about web development. <br />
-                    Feel free to reach out to me directly via email.
-                </p>
-                <div className={styles.emailContainer}>
-                    <AiOutlineMail className={styles.mailIcon} />
-                    <a 
-                        href="mailto:matiasvaldez8184@gmail.com" 
-                        className={styles.emailLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {email}
-                    </a>
-                    <button 
-                        onClick={copyToClipboard}
-                        className={styles.copyButton}
-                        title={copied ? "Copied!" : "Copy email"}
-                    >
-                        {copied ? <FiCheck /> : <FiCopy />}
-                    </button>
-                </div>
-                {copied && (
-                    <motion.p 
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className={styles.copiedMessage}
-                    >
-                        Email copied to clipboard!
-                    </motion.p>
-                )}
-            </div>
-        </div>
-        </div>
-    );
-};
+      </div>
+    </section>
+  )
+}

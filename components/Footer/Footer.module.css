@@ -1,42 +1,105 @@
-.pos{
-    margin-top: 5rem;
+.footer {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--glass-border);
+  margin-top: 4rem;
 }
-.ul {
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.logoDot {
+  color: var(--accent-purple);
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background: rgba(231, 113, 255, 0.1);
+  border-color: rgba(231, 113, 255, 0.3);
+  color: var(--accent-purple);
+}
+
+.socialLink svg {
+  font-size: 1.1rem;
+}
+
+.bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem;
   }
-  .li{
-    display: block;
-    color: white;
+
+  .top {
+    flex-direction: column;
+    gap: 2rem;
     text-align: center;
-    padding: 14px 16px;
-    margin: 0 40px;
-    text-decoration: none;
   }
-  .images{
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1.5rem;
   }
-  .a:hover{
-    color:var(--color-2);
-  }
-  @media (max-width: 600px) {
-    .ul{
-      display: inline-flex;
-      max-width: 100%;
-    }
-    .li{
-      margin: 0;
-    }
-    .pos > footer > .ul{
-      display: flex;
-      justify-content: center;
-    }
-  }
+}
