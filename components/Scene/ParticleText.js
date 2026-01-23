@@ -27,15 +27,17 @@ export default function ParticleText({ scrollProgress = 0, onFontLoaded, isMobil
     )
   }, [onFontLoaded])
 
-  // Track mouse position
+  // Track mouse position (desktop only)
   useEffect(() => {
+    if (isMobile) return
+
     const handleMouseMove = (e) => {
       mouseRef.current.x = (e.clientX / window.innerWidth) * 2 - 1
       mouseRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1
     }
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+  }, [isMobile])
 
   // Generate particles based on text
   const { positions, targetPositions, colors, velocities } = useMemo(() => {
@@ -138,14 +140,19 @@ export default function ParticleText({ scrollProgress = 0, onFontLoaded, isMobil
     for (let i = 0; i < particleCount; i++) {
       const i3 = i * 3
 
-      // Mouse influence
-      const mouseX = mouseRef.current.x * viewport.width * 0.5
-      const mouseY = mouseRef.current.y * viewport.height * 0.5
+      // Mouse influence (desktop only)
+      let mouseInfluence = 0
+      let dx = 0
+      let dy = 0
 
-      const dx = positions[i3] - mouseX
-      const dy = positions[i3 + 1] - mouseY
-      const dist = Math.sqrt(dx * dx + dy * dy)
-      const mouseInfluence = Math.max(0, 1 - dist / 2) * 0.1
+      if (!isMobile) {
+        const mouseX = mouseRef.current.x * viewport.width * 0.5
+        const mouseY = mouseRef.current.y * viewport.height * 0.5
+        dx = positions[i3] - mouseX
+        dy = positions[i3 + 1] - mouseY
+        const dist = Math.sqrt(dx * dx + dy * dy)
+        mouseInfluence = Math.max(0, 1 - dist / 2) * 0.1
+      }
 
       // Target position (either formed text or scattered)
       let targetX, targetY, targetZ

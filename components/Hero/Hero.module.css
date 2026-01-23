@@ -52,7 +52,7 @@
 .location {
   font-size: 1rem;
   font-weight: 400;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   margin: 0;
 }
 

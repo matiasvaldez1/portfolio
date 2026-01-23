@@ -13,6 +13,8 @@ export const About = () => {
     'Node.js',
     'GraphQL',
     'Tailwind CSS',
+    'PostgreSQL',
+    'Prisma',
   ]
 
   const experience = [
@@ -44,18 +46,18 @@ export const About = () => {
           <div className={styles.grid}>
             <div className={styles.bio}>
               <p className={styles.text}>
-                I&apos;m a frontend developer based in Buenos Aires, Argentina, passionate
-                about creating high-performance web experiences that are both beautiful
-                and functional.
+                I&apos;m a frontend developer passionate about building <strong>high-performance
+                web experiences</strong> with React, Next.js, and TypeScript that are both
+                beautiful and functional.
               </p>
               <p className={styles.text}>
-                With experience across startups and agencies, I&apos;ve developed Shopify
-                integrations, optimized payment systems, and led A/B testing experiments
-                that drive real business results.
+                With experience across startups and agencies, I&apos;ve worked on everything from
+                <strong> Shopify e-commerce</strong> integrations and A/B testing to translating
+                Figma designs into pixel-perfect, responsive code.
               </p>
               <p className={styles.text}>
-                I focus on writing clean, maintainable code and staying current with
-                modern web technologies to deliver the best possible solutions.
+                I focus on writing clean, maintainable code and delivering solutions that
+                drive real business results.
               </p>
             </div>
 

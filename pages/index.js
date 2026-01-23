@@ -53,7 +53,7 @@ export default function Home({ personalProjects, professionalProjects }) {
         <title>Matias Valdez | Frontend Developer</title>
         <meta
           name="description"
-          content="Frontend Developer based in Buenos Aires. Crafting high-performance web experiences with React, Next.js, and modern technologies."
+          content="Frontend Developer based in Buenos Aires. Building high-performance web experiences with React, Next.js, and Shopify."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
