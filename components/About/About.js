@@ -8,13 +8,15 @@ export const About = () => {
     'Next.js',
     'TypeScript',
     'Shopify',
+    'Liquid',
+    'Remix',
     'Node.js',
     'GraphQL',
     'Tailwind CSS',
-    'PostgreSQL',
   ]
 
   const experience = [
+    { company: 'Prismfly', role: 'Shopify Developer' },
     { company: 'Gohub', role: 'Frontend Developer' },
     { company: 'GMO Solutions', role: 'Web Developer' },
     { company: 'FJ Solutions', role: 'Frontend Developer' },
