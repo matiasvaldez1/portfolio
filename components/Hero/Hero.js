@@ -2,8 +2,11 @@ import React from 'react'
 import { NavBar } from '../NavBar/NavBar'
 import styles from './Hero.module.css'
 import { motion } from 'framer-motion'
+import { useI18n } from '../../context/i18n'
 
 export const Hero = () => {
+  const { t } = useI18n()
+
   return (
     <>
       <NavBar />
@@ -15,12 +18,12 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <p className={styles.greeting}>Hello, I&apos;m</p>
+            <p className={styles.greeting}>{t.hero.greeting}</p>
             <h1 className={styles.name}>
               <span className={styles.gradientText}>Matias Valdez</span>
             </h1>
-            <p className={styles.title}>Frontend Developer</p>
-            <p className={styles.location}>Based in Buenos Aires</p>
+            <p className={styles.title}>{t.hero.title}</p>
+            <p className={styles.location}>{t.hero.location}</p>
           </motion.div>
 
           <motion.div
@@ -30,7 +33,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.9 }}
           >
             <a href="#about" className={styles.btnPrimary}>
-              Explore my work
+              {t.hero.exploreWork}
             </a>
             <a
               href={process.env.NEXT_PUBLIC_LINK_CV}
@@ -38,7 +41,7 @@ export const Hero = () => {
               rel="noopener noreferrer"
               className={styles.btnSecondary}
             >
-              Download CV
+              {t.hero.downloadCV}
             </a>
           </motion.div>
 
@@ -48,7 +51,7 @@ export const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.5 }}
           >
-            <span className={styles.scrollText}>Scroll</span>
+            <span className={styles.scrollText}>{t.hero.scroll}</span>
             <div className={styles.scrollLine} />
           </motion.div>
         </div>

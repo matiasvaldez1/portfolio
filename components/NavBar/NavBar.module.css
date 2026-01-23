@@ -155,4 +155,39 @@
   .mobileLink:hover {
     color: var(--accent-purple);
   }
+
+  .mobileLangToggle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-purple);
+    background: rgba(231, 113, 255, 0.1);
+    border: 1px solid var(--accent-purple);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .mobileLangToggle:hover {
+    background: rgba(231, 113, 255, 0.2);
+  }
+}
+
+.langToggle {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  color: var(--accent-purple);
+  background: rgba(231, 113, 255, 0.1);
+  border: 1px solid rgba(231, 113, 255, 0.3);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.langToggle:hover {
+  background: rgba(231, 113, 255, 0.2);
+  border-color: var(--accent-purple);
 }

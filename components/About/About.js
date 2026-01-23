@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from './About.module.css'
 import { motion } from 'framer-motion'
+import { useI18n } from '../../context/i18n'
 
 export const About = () => {
+  const { t } = useI18n()
+
   const skills = [
     'React',
     'Next.js',
@@ -36,34 +39,29 @@ export const About = () => {
           transition={{ duration: 0.6 }}
         >
           <div className={styles.header}>
-            <span className={styles.label}>About</span>
+            <span className={styles.label}>{t.about.label}</span>
             <h2 className={styles.title}>
-              Building digital experiences <br />
-              <span className={styles.gradientText}>that make a difference</span>
+              {t.about.title} <br />
+              <span className={styles.gradientText}>{t.about.titleHighlight}</span>
             </h2>
           </div>
 
           <div className={styles.grid}>
             <div className={styles.bio}>
               <p className={styles.text}>
-                I&apos;m a frontend developer passionate about building <strong>high-performance
-                web experiences</strong> with React, Next.js, and TypeScript that are both
-                beautiful and functional.
+                {t.about.bio1} <strong>{t.about.bio1Bold}</strong> {t.about.bio1End}
               </p>
               <p className={styles.text}>
-                With experience across startups and agencies, I&apos;ve worked on everything from
-                <strong> Shopify e-commerce</strong> integrations and A/B testing to translating
-                Figma designs into pixel-perfect, responsive code.
+                {t.about.bio2} <strong>{t.about.bio2Bold}</strong> {t.about.bio2End}
               </p>
               <p className={styles.text}>
-                I focus on writing clean, maintainable code and delivering solutions that
-                drive real business results.
+                {t.about.bio3}
               </p>
             </div>
 
             <div className={styles.details}>
               <div className={styles.section}>
-                <h3 className={styles.sectionTitle}>Experience</h3>
+                <h3 className={styles.sectionTitle}>{t.about.experience}</h3>
                 <ul className={styles.experienceList}>
                   {experience.map((exp, i) => (
                     <motion.li
@@ -81,7 +79,7 @@ export const About = () => {
               </div>
 
               <div className={styles.section}>
-                <h3 className={styles.sectionTitle}>Technologies</h3>
+                <h3 className={styles.sectionTitle}>{t.about.technologies}</h3>
                 <div className={styles.skills}>
                   {skills.map((skill, i) => (
                     <motion.span

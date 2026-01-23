@@ -2,8 +2,10 @@ import React from 'react'
 import styles from './Card.module.css'
 import { motion } from 'framer-motion'
 import { AiFillGithub, AiOutlineRocket } from "react-icons/ai"
+import { useI18n } from '../../context/i18n'
 
 export const Card = ({ image, title, github, deploy, description, tech }) => {
+  const { t } = useI18n()
   return (
     <motion.div
       className={styles.container}
@@ -20,7 +22,7 @@ export const Card = ({ image, title, github, deploy, description, tech }) => {
           className={styles.img}
         />
         <div className={styles.overlay}>
-          <span className={styles.viewProject}>View Project</span>
+          <span className={styles.viewProject}>{t.projects.viewProject}</span>
         </div>
       </div>
       <div className={styles.text}>
@@ -30,8 +32,8 @@ export const Card = ({ image, title, github, deploy, description, tech }) => {
         )}
         {tech && (
           <div className={styles.techStack}>
-            {tech.split(',').map((t, i) => (
-              <span key={i} className={styles.techTag}>{t.trim()}</span>
+            {tech.split(',').map((tag, i) => (
+              <span key={i} className={styles.techTag}>{tag.trim()}</span>
             ))}
           </div>
         )}
@@ -45,7 +47,7 @@ export const Card = ({ image, title, github, deploy, description, tech }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <AiFillGithub /> Github
+              <AiFillGithub /> {t.card.github}
             </motion.a>
           )}
           {deploy && (
@@ -57,7 +59,7 @@ export const Card = ({ image, title, github, deploy, description, tech }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <AiOutlineRocket /> Deploy
+              <AiOutlineRocket /> {t.card.deploy}
             </motion.a>
           )}
         </div>

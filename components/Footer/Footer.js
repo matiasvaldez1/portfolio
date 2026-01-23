@@ -1,15 +1,21 @@
 import React from 'react'
 import styles from './Footer.module.css'
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
+import { useI18n } from '../../context/i18n'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const { locale, setLocale, t } = useI18n()
+
+  const toggleLocale = () => {
+    setLocale(locale === 'en' ? 'es' : 'en')
+  }
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#home', label: t.nav.home },
+    { href: '#about', label: t.nav.about },
+    { href: '#projects', label: t.nav.projects },
+    { href: '#contact', label: t.nav.contact },
   ]
 
   const socialLinks = [
@@ -59,12 +65,15 @@ export const Footer = () => {
                 {link.icon}
               </a>
             ))}
+            <button onClick={toggleLocale} className={styles.langToggle}>
+              {locale === 'en' ? 'ES' : 'EN'}
+            </button>
           </div>
         </div>
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            &copy; {currentYear} Matias Valdez. All rights reserved.
+            &copy; {currentYear} Matias Valdez. {t.footer.copyright}
           </p>
         </div>
       </div>

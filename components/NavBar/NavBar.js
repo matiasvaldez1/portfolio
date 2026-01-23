@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styles from './NavBar.module.css'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useI18n } from '../../context/i18n'
 
 export const NavBar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { locale, setLocale, t } = useI18n()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +17,15 @@ export const NavBar = () => {
   }, [])
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#home', label: t.nav.home },
+    { href: '#about', label: t.nav.about },
+    { href: '#projects', label: t.nav.projects },
+    { href: '#contact', label: t.nav.contact },
   ]
+
+  const toggleLocale = () => {
+    setLocale(locale === 'en' ? 'es' : 'en')
+  }
 
   return (
     <>
@@ -49,6 +55,16 @@ export const NavBar = () => {
                 </a>
               </motion.li>
             ))}
+            <motion.li
+              className={styles.li}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+            >
+              <button onClick={toggleLocale} className={styles.langToggle}>
+                {locale === 'en' ? 'ES' : 'EN'}
+              </button>
+            </motion.li>
           </ul>
 
           <button
@@ -83,6 +99,15 @@ export const NavBar = () => {
                 {link.label}
               </motion.a>
             ))}
+            <motion.button
+              onClick={toggleLocale}
+              className={styles.mobileLangToggle}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              {locale === 'en' ? 'Español' : 'English'}
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>

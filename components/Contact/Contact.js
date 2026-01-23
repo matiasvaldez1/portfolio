@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import styles from './Contact.module.css'
 import { FiCopy, FiCheck, FiGithub, FiLinkedin } from 'react-icons/fi'
 import { motion } from 'framer-motion'
+import { useI18n } from '../../context/i18n'
 
 export const Contact = () => {
   const [copied, setCopied] = useState(false)
   const email = 'matiasvaldez8184@gmail.com'
+  const { t } = useI18n()
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email)
@@ -23,15 +25,14 @@ export const Contact = () => {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.label}>Contact</span>
+          <span className={styles.label}>{t.contact.label}</span>
           <h2 className={styles.title}>
-            Let&apos;s build something <br />
-            <span className={styles.gradientText}>together</span>
+            {t.contact.title} <br />
+            <span className={styles.gradientText}>{t.contact.titleHighlight}</span>
           </h2>
 
           <p className={styles.description}>
-            I&apos;m always open to discussing new projects, creative ideas,
-            or opportunities to be part of your vision.
+            {t.contact.description}
           </p>
 
           <div className={styles.emailBox}>
@@ -39,10 +40,10 @@ export const Contact = () => {
             <button
               onClick={copyToClipboard}
               className={styles.copyButton}
-              title={copied ? 'Copied!' : 'Copy email'}
+              title={copied ? t.contact.copied : t.contact.copy}
             >
               {copied ? <FiCheck /> : <FiCopy />}
-              <span>{copied ? 'Copied!' : 'Copy'}</span>
+              <span>{copied ? t.contact.copied : t.contact.copy}</span>
             </button>
           </div>
 

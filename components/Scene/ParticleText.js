@@ -15,6 +15,9 @@ export default function ParticleText({ scrollProgress = 0, onFontLoaded, isMobil
 
   const particleCount = isMobile ? Math.floor(BASE_PARTICLE_COUNT * 0.4) : BASE_PARTICLE_COUNT
 
+  // Scale text based on viewport width - smaller on mobile
+  const textScale = isMobile ? Math.min(viewport.width / 6, 0.55) : 1
+
   // Load font
   useEffect(() => {
     const loader = new FontLoader()
@@ -55,12 +58,12 @@ export default function ParticleText({ scrollProgress = 0, onFontLoaded, isMobil
     ]
 
     if (font) {
-      // Create text geometry
+      // Create text geometry - scale down for mobile
       const textGeo = new TextGeometry('MATIAS', {
         font: font,
-        size: 1,
-        height: 0.1,
-        curveSegments: 12,
+        size: textScale,
+        height: 0.1 * textScale,
+        curveSegments: isMobile ? 8 : 12,
       })
       textGeo.computeBoundingBox()
       textGeo.center()
@@ -125,7 +128,7 @@ export default function ParticleText({ scrollProgress = 0, onFontLoaded, isMobil
     }
 
     return { positions, targetPositions, colors, velocities }
-  }, [font, particleCount])
+  }, [font, particleCount, textScale, isMobile])
 
   useFrame((state, delta) => {
     if (!ref.current) return
@@ -163,12 +166,12 @@ export default function ParticleText({ scrollProgress = 0, onFontLoaded, isMobil
         targetY = targetPositions[i3 + 1]
         targetZ = targetPositions[i3 + 2]
       } else {
-        // Disperse outward
+        // Disperse outward - reduced spread
         const angle = (i / particleCount) * Math.PI * 20 + state.clock.elapsedTime * 0.1
-        const radius = 3 + (i % 10) * 0.5 + disperseStrength * 5
+        const radius = 2 + (i % 10) * 0.3 + disperseStrength * 2.5
         targetX = Math.cos(angle) * radius
-        targetY = Math.sin(angle * 0.7) * radius * 0.5
-        targetZ = Math.sin(angle) * radius
+        targetY = Math.sin(angle * 0.7) * radius * 0.3
+        targetZ = Math.sin(angle) * radius * 0.5
       }
 
       // Lerp toward target
@@ -184,8 +187,8 @@ export default function ParticleText({ scrollProgress = 0, onFontLoaded, isMobil
 
     positionAttr.needsUpdate = true
 
-    // Fade based on scroll
-    ref.current.material.opacity = Math.max(0.1, 1 - scrollProgress * 2)
+    // Fade out faster when scrolling
+    ref.current.material.opacity = Math.max(0, 1 - scrollProgress * 3)
   })
 
   return (

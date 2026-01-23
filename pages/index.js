@@ -9,6 +9,7 @@ import { Contact } from '../components/Contact/Contact'
 import { Footer } from '../components/Footer/Footer'
 import { useScroll } from '../components/Layout/SmoothScroll'
 import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal'
+import { useI18n } from '../context/i18n'
 
 // Dynamic import for Three.js scene (no SSR)
 const Scene = dynamic(() => import('../components/Scene/Scene'), {
@@ -47,6 +48,8 @@ function AnimatedGrid({ children, className }) {
 }
 
 export default function Home({ personalProjects, professionalProjects }) {
+  const { t } = useI18n()
+
   return (
     <div>
       <Head>
@@ -66,10 +69,10 @@ export default function Home({ personalProjects, professionalProjects }) {
 
         <AnimatedSection id="projects" className={styles.container}>
           <h2 className={styles.title}>
-            <span className={styles.gradientText}>Featured Work</span>
+            <span className={styles.gradientText}>{t.projects.featuredWork}</span>
           </h2>
           <p className={styles.subtitle}>
-            Projects I&apos;ve built to learn and explore new technologies
+            {t.projects.featuredSubtitle}
           </p>
           <AnimatedGrid className={styles.grid}>
             {personalProjects?.map((project, k) => (
@@ -88,10 +91,10 @@ export default function Home({ personalProjects, professionalProjects }) {
 
         <AnimatedSection id="professional-projects" className={styles.container}>
           <h2 className={styles.title}>
-            <span className={styles.gradientText}>Professional Work</span>
+            <span className={styles.gradientText}>{t.projects.professionalWork}</span>
           </h2>
           <p className={styles.subtitle}>
-            Client projects and professional websites I&apos;ve developed
+            {t.projects.professionalSubtitle}
           </p>
           <AnimatedGrid className={styles.grid}>
             {professionalProjects?.map((project, k) => (
