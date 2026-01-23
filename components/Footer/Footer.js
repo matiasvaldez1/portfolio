@@ -5,7 +5,7 @@ import { useI18n } from '../../context/i18n'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const { locale, setLocale, t } = useI18n()
+  const { locale, setLocale, t, mounted } = useI18n()
 
   const toggleLocale = () => {
     setLocale(locale === 'en' ? 'es' : 'en')
@@ -66,7 +66,7 @@ export const Footer = () => {
               </a>
             ))}
             <button onClick={toggleLocale} className={styles.langToggle}>
-              {locale === 'en' ? 'ES' : 'EN'}
+              {mounted ? (locale === 'en' ? 'EN' : 'ES') : ''}
             </button>
           </div>
         </div>

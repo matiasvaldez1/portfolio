@@ -23,13 +23,13 @@ const translations = {
       label: 'About',
       title: 'Building digital experiences',
       titleHighlight: 'that make a difference',
-      bio1: "I'm a frontend developer passionate about building",
-      bio1Bold: 'high-performance web experiences',
-      bio1End: 'with React, Next.js, and TypeScript that are both beautiful and functional.',
-      bio2: "With experience across startups and agencies, I've worked on everything from",
-      bio2Bold: 'Shopify e-commerce',
-      bio2End: "integrations and A/B testing to translating Figma designs into pixel-perfect, responsive code.",
-      bio3: 'I focus on writing clean, maintainable code and delivering solutions that drive real business results.',
+      bio1: "I'm a frontend developer with over 4 years of experience crafting",
+      bio1Bold: 'high-performance web applications',
+      bio1End: 'with React, Next.js, and TypeScript.',
+      bio2: "I've worked across startups and agencies, from building custom",
+      bio2Bold: 'Shopify apps and e-commerce solutions',
+      bio2End: 'to developing full-stack features with Node.js, API integrations, and A/B testing strategies that drive real results.',
+      bio3: 'I focus on writing clean, scalable code and delivering solutions that combine great user experience with measurable business impact.',
       experience: 'Experience',
       technologies: 'Technologies',
     },
@@ -82,13 +82,13 @@ const translations = {
       label: 'Sobre mí',
       title: 'Construyendo experiencias digitales',
       titleHighlight: 'que marcan la diferencia',
-      bio1: 'Soy un desarrollador frontend apasionado por crear',
-      bio1Bold: 'experiencias web de alto rendimiento',
-      bio1End: 'con React, Next.js y TypeScript que son tanto atractivas como funcionales.',
-      bio2: 'Con experiencia en startups y agencias, he trabajado en todo, desde integraciones de',
-      bio2Bold: 'e-commerce con Shopify',
-      bio2End: 'y pruebas A/B hasta traducir diseños de Figma en código responsivo y pixel-perfect.',
-      bio3: 'Me enfoco en escribir código limpio y mantenible, entregando soluciones que generan resultados reales.',
+      bio1: 'Soy un desarrollador frontend con más de 4 años de experiencia creando',
+      bio1Bold: 'aplicaciones web de alto rendimiento',
+      bio1End: 'con React, Next.js y TypeScript.',
+      bio2: 'He trabajado en startups y agencias, desde desarrollar',
+      bio2Bold: 'apps Shopify y soluciones e-commerce',
+      bio2End: 'hasta construir features full-stack con Node.js, integraciones de APIs y estrategias de A/B testing que generan resultados reales.',
+      bio3: 'Me enfoco en escribir código limpio y escalable, entregando soluciones que combinan gran experiencia de usuario con impacto medible en el negocio.',
       experience: 'Experiencia',
       technologies: 'Tecnologías',
     },
@@ -135,19 +135,14 @@ export function I18nProvider({ children }) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
-
-    // Check for saved preference first
     const saved = localStorage.getItem('locale')
     if (saved && (saved === 'en' || saved === 'es')) {
       setLocale(saved)
-      return
+    } else {
+      const systemLang = navigator.language.split('-')[0]
+      setLocale(systemLang === 'es' ? 'es' : 'en')
     }
-
-    // Detect system language preference
-    const systemLang = navigator.language.split('-')[0]
-    const supportedLocale = systemLang === 'es' ? 'es' : 'en'
-    setLocale(supportedLocale)
+    setMounted(true)
   }, [])
 
   const changeLocale = (newLocale) => {

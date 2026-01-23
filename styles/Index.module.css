@@ -47,15 +47,19 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.25rem;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid {
+    gap: 1.25rem;
   }
 }

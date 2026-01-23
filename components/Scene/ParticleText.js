@@ -1,217 +1,122 @@
-import { useRef, useMemo, useEffect, useState } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useRef, useMemo } from 'react'
+import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
-import { MeshSurfaceSampler } from 'three/examples/jsm/math/MeshSurfaceSampler'
 
-const BASE_PARTICLE_COUNT = 3000
+const PARTICLE_COUNT = 80
 
-export default function ParticleText({ scrollProgress = 0, onFontLoaded, isMobile = false }) {
-  const ref = useRef()
-  const mouseRef = useRef({ x: 0, y: 0 })
-  const { viewport } = useThree()
-  const [font, setFont] = useState(null)
+export default function ParticleText({ scrollProgress = 0, isMobile = false }) {
+  const pointsRef = useRef()
 
-  const particleCount = isMobile ? Math.floor(BASE_PARTICLE_COUNT * 0.4) : BASE_PARTICLE_COUNT
+  const particles = useMemo(() => {
+    const positions = new Float32Array(PARTICLE_COUNT * 3)
+    const colors = new Float32Array(PARTICLE_COUNT * 3)
+    const velocities = new Float32Array(PARTICLE_COUNT * 3)
+    const randoms = new Float32Array(PARTICLE_COUNT)
 
-  // Scale text based on viewport width - smaller on mobile
-  const textScale = isMobile ? Math.min(viewport.width / 6, 0.55) : 1
-
-  // Load font
-  useEffect(() => {
-    const loader = new FontLoader()
-    loader.load(
-      'https://threejs.org/examples/fonts/helvetiker_bold.typeface.json',
-      (loadedFont) => {
-        setFont(loadedFont)
-        onFontLoaded?.()
-      }
-    )
-  }, [onFontLoaded])
-
-  // Track mouse position (desktop only)
-  useEffect(() => {
-    if (isMobile) return
-
-    const handleMouseMove = (e) => {
-      mouseRef.current.x = (e.clientX / window.innerWidth) * 2 - 1
-      mouseRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [isMobile])
-
-  // Generate particles based on text
-  const { positions, targetPositions, colors, velocities } = useMemo(() => {
-    const positions = new Float32Array(particleCount * 3)
-    const targetPositions = new Float32Array(particleCount * 3)
-    const colors = new Float32Array(particleCount * 3)
-    const velocities = new Float32Array(particleCount * 3)
-
-    // Color palette for particles
-    const colorPalette = [
-      new THREE.Color('#667eea'),
-      new THREE.Color('#764ba2'),
-      new THREE.Color('#e771ff'),
-      new THREE.Color('#00d4ff'),
+    // Color palette
+    const palette = [
+      new THREE.Color('#c084fc'), // purple
+      new THREE.Color('#a855f7'), // violet
+      new THREE.Color('#818cf8'), // indigo
+      new THREE.Color('#60a5fa'), // blue
+      new THREE.Color('#22d3ee'), // cyan
+      new THREE.Color('#f0abfc'), // pink
     ]
 
-    if (font) {
-      // Create text geometry - scale down for mobile
-      const textGeo = new TextGeometry('MATIAS', {
-        font: font,
-        size: textScale,
-        height: 0.1 * textScale,
-        curveSegments: isMobile ? 8 : 12,
-      })
-      textGeo.computeBoundingBox()
-      textGeo.center()
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 7
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 5
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 2 - 1
 
-      // Sample points from text surface
-      const sampler = new MeshSurfaceSampler(
-        new THREE.Mesh(textGeo, new THREE.MeshBasicMaterial())
-      ).build()
+      // Random color from palette
+      const color = palette[Math.floor(Math.random() * palette.length)]
+      colors[i * 3] = color.r
+      colors[i * 3 + 1] = color.g
+      colors[i * 3 + 2] = color.b
 
-      const tempPosition = new THREE.Vector3()
+      velocities[i * 3] = (Math.random() - 0.5) * 0.003
+      velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.003
+      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.001
 
-      for (let i = 0; i < particleCount; i++) {
-        sampler.sample(tempPosition)
-
-        // Target position (text shape)
-        targetPositions[i * 3] = tempPosition.x
-        targetPositions[i * 3 + 1] = tempPosition.y
-        targetPositions[i * 3 + 2] = tempPosition.z
-
-        // Initial position (scattered)
-        const angle = Math.random() * Math.PI * 2
-        const radius = 2 + Math.random() * 6
-        positions[i * 3] = Math.cos(angle) * radius
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 6
-        positions[i * 3 + 2] = Math.sin(angle) * radius
-
-        // Velocities for animation
-        velocities[i * 3] = (Math.random() - 0.5) * 0.02
-        velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.02
-        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.02
-
-        // Random color
-        const color = colorPalette[Math.floor(Math.random() * colorPalette.length)]
-        colors[i * 3] = color.r
-        colors[i * 3 + 1] = color.g
-        colors[i * 3 + 2] = color.b
-      }
-    } else {
-      // Fallback: random sphere distribution
-      for (let i = 0; i < particleCount; i++) {
-        const theta = Math.random() * Math.PI * 2
-        const phi = Math.acos(Math.random() * 2 - 1)
-        const radius = 1 + Math.random() * 2
-
-        targetPositions[i * 3] = radius * Math.sin(phi) * Math.cos(theta) * 2
-        targetPositions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta)
-        targetPositions[i * 3 + 2] = radius * Math.cos(phi)
-
-        positions[i * 3] = (Math.random() - 0.5) * 10
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 10
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 10
-
-        velocities[i * 3] = (Math.random() - 0.5) * 0.02
-        velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.02
-        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.02
-
-        const color = colorPalette[Math.floor(Math.random() * colorPalette.length)]
-        colors[i * 3] = color.r
-        colors[i * 3 + 1] = color.g
-        colors[i * 3 + 2] = color.b
-      }
+      randoms[i] = Math.random()
     }
 
-    return { positions, targetPositions, colors, velocities }
-  }, [font, particleCount, textScale, isMobile])
+    return { positions, colors, velocities, randoms }
+  }, [])
 
-  useFrame((state, delta) => {
-    if (!ref.current) return
+  useFrame((state) => {
+    if (!pointsRef.current) return
 
-    const positionAttr = ref.current.geometry.attributes.position
-    const positions = positionAttr.array
+    const positions = pointsRef.current.geometry.attributes.position.array
+    const time = state.clock.elapsedTime
 
-    // Lerp factor based on scroll
-    const formationStrength = Math.max(0, 1 - scrollProgress * 3)
-    const disperseStrength = Math.min(1, scrollProgress * 3)
-
-    for (let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3
+      const random = particles.randoms[i]
 
-      // Mouse influence (desktop only)
-      let mouseInfluence = 0
-      let dx = 0
-      let dy = 0
+      // Slow drift
+      positions[i3] += particles.velocities[i3]
+      positions[i3 + 1] += particles.velocities[i3 + 1]
+      positions[i3 + 2] += particles.velocities[i3 + 2]
 
-      if (!isMobile) {
-        const mouseX = mouseRef.current.x * viewport.width * 0.5
-        const mouseY = mouseRef.current.y * viewport.height * 0.5
-        dx = positions[i3] - mouseX
-        dy = positions[i3 + 1] - mouseY
-        const dist = Math.sqrt(dx * dx + dy * dy)
-        mouseInfluence = Math.max(0, 1 - dist / 2) * 0.1
-      }
+      // Gentle floating wave
+      positions[i3] += Math.sin(time * 0.2 + random * 20) * 0.002
+      positions[i3 + 1] += Math.cos(time * 0.3 + random * 20) * 0.002
 
-      // Target position (either formed text or scattered)
-      let targetX, targetY, targetZ
-
-      if (formationStrength > 0.1) {
-        // Move toward text formation
-        targetX = targetPositions[i3]
-        targetY = targetPositions[i3 + 1]
-        targetZ = targetPositions[i3 + 2]
-      } else {
-        // Disperse outward - reduced spread
-        const angle = (i / particleCount) * Math.PI * 20 + state.clock.elapsedTime * 0.1
-        const radius = 2 + (i % 10) * 0.3 + disperseStrength * 2.5
-        targetX = Math.cos(angle) * radius
-        targetY = Math.sin(angle * 0.7) * radius * 0.3
-        targetZ = Math.sin(angle) * radius * 0.5
-      }
-
-      // Lerp toward target
-      const lerpFactor = 0.05
-      positions[i3] += (targetX - positions[i3]) * lerpFactor + mouseInfluence * dx
-      positions[i3 + 1] += (targetY - positions[i3 + 1]) * lerpFactor + mouseInfluence * dy
-      positions[i3 + 2] += (targetZ - positions[i3 + 2]) * lerpFactor
-
-      // Add some organic movement
-      positions[i3] += Math.sin(state.clock.elapsedTime + i) * 0.001
-      positions[i3 + 1] += Math.cos(state.clock.elapsedTime + i) * 0.001
+      // Wrap around
+      if (positions[i3] > 4) positions[i3] = -4
+      if (positions[i3] < -4) positions[i3] = 4
+      if (positions[i3 + 1] > 3) positions[i3 + 1] = -3
+      if (positions[i3 + 1] < -3) positions[i3 + 1] = 3
     }
 
-    positionAttr.needsUpdate = true
+    pointsRef.current.geometry.attributes.position.needsUpdate = true
 
-    // Fade out faster when scrolling
-    ref.current.material.opacity = Math.max(0, 1 - scrollProgress * 3)
+    const opacity = Math.max(0, 0.7 - scrollProgress * 1.2)
+    pointsRef.current.material.opacity = opacity
   })
 
+  // Create circular texture for softer particles
+  const texture = useMemo(() => {
+    const canvas = document.createElement('canvas')
+    canvas.width = 64
+    canvas.height = 64
+    const ctx = canvas.getContext('2d')
+
+    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32)
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
+    gradient.addColorStop(0.3, 'rgba(255, 255, 255, 0.8)')
+    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)')
+
+    ctx.fillStyle = gradient
+    ctx.fillRect(0, 0, 64, 64)
+
+    const tex = new THREE.CanvasTexture(canvas)
+    return tex
+  }, [])
+
   return (
-    <points ref={ref}>
+    <points ref={pointsRef}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={particleCount}
-          array={positions}
+          count={PARTICLE_COUNT}
+          array={particles.positions}
           itemSize={3}
         />
         <bufferAttribute
           attach="attributes-color"
-          count={particleCount}
-          array={colors}
+          count={PARTICLE_COUNT}
+          array={particles.colors}
           itemSize={3}
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.03}
+        size={isMobile ? 0.15 : 0.2}
         vertexColors
         transparent
-        opacity={1}
+        opacity={0.7}
+        map={texture}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}

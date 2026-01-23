@@ -5,7 +5,11 @@ import { motion } from 'framer-motion'
 import { useI18n } from '../../context/i18n'
 
 export const Hero = () => {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
+
+  const cvLink = locale === 'es'
+    ? process.env.NEXT_PUBLIC_LINK_CV_ES
+    : process.env.NEXT_PUBLIC_LINK_CV
 
   return (
     <>
@@ -36,7 +40,7 @@ export const Hero = () => {
               {t.hero.exploreWork}
             </a>
             <a
-              href={process.env.NEXT_PUBLIC_LINK_CV}
+              href={cvLink}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnSecondary}

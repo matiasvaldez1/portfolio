@@ -39,13 +39,9 @@ function Effects({ isMobile }) {
 }
 
 function SceneContent({ scrollProgress, onReady, isMobile }) {
-  const [fontLoaded, setFontLoaded] = useState(false)
-
   useEffect(() => {
-    if (fontLoaded) {
-      onReady?.()
-    }
-  }, [fontLoaded, onReady])
+    onReady?.()
+  }, [onReady])
 
   return (
     <>
@@ -55,7 +51,7 @@ function SceneContent({ scrollProgress, onReady, isMobile }) {
       <pointLight position={[-10, -10, -10]} intensity={0.3} color="#e771ff" />
 
       <ParticleField scrollProgress={scrollProgress} isMobile={isMobile} />
-      <ParticleText scrollProgress={scrollProgress} onFontLoaded={() => setFontLoaded(true)} isMobile={isMobile} />
+      <ParticleText scrollProgress={scrollProgress} isMobile={isMobile} />
       <GlowOrbs scrollProgress={scrollProgress} isMobile={isMobile} />
 
       <Effects isMobile={isMobile} />

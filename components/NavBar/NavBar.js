@@ -6,7 +6,7 @@ import { useI18n } from '../../context/i18n'
 export const NavBar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { locale, setLocale, t } = useI18n()
+  const { locale, setLocale, t, mounted } = useI18n()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +62,7 @@ export const NavBar = () => {
               transition={{ delay: 0.4, duration: 0.4 }}
             >
               <button onClick={toggleLocale} className={styles.langToggle}>
-                {locale === 'en' ? 'ES' : 'EN'}
+                {mounted ? (locale === 'en' ? 'EN' : 'ES') : ''}
               </button>
             </motion.li>
           </ul>
@@ -106,7 +106,7 @@ export const NavBar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
             >
-              {locale === 'en' ? 'Español' : 'English'}
+              {mounted ? (locale === 'en' ? 'English' : 'Español') : ''}
             </motion.button>
           </motion.div>
         )}
