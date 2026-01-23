@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react'
 
-export default function Loader({ isReady, minDuration = 1500 }) {
+export default function Loader({ isReady, minDuration = 800 }) {
   const [isVisible, setIsVisible] = useState(true)
   const [isFading, setIsFading] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -33,9 +33,9 @@ export default function Loader({ isReady, minDuration = 1500 }) {
       setProgress((prev) => {
         if (prev >= 90 && !isReady) return prev
         if (prev >= 100) return 100
-        return prev + (isReady ? 10 : 2)
+        return prev + (isReady ? 15 : 5)
       })
-    }, 50)
+    }, 40)
     return () => clearInterval(interval)
   }, [isReady])
 

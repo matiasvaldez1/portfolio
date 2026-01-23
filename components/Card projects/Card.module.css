@@ -40,6 +40,40 @@
   transform: scale(1.05);
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(5, 5, 16, 0.8) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.viewProject {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  padding: 0.5rem 1rem;
+  background: rgba(231, 113, 255, 0.3);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
 .text {
   display: flex;
   flex-direction: column;
@@ -53,6 +87,32 @@
   margin: 0;
   color: var(--text-primary);
   letter-spacing: -0.01em;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techTag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  background: rgba(102, 126, 234, 0.15);
+  color: var(--accent-purple);
+  border-radius: 50px;
+  font-weight: 500;
 }
 
 .links {

@@ -79,6 +79,8 @@ export default function Home({ personalProjects, professionalProjects }) {
                 title={project.title}
                 github={project.github}
                 deploy={project.deploy}
+                description={project.description}
+                tech={project.tech}
               />
             ))}
           </AnimatedGrid>
@@ -99,6 +101,8 @@ export default function Home({ personalProjects, professionalProjects }) {
                 title={project.title}
                 github={project.github}
                 deploy={project.deploy}
+                description={project.description}
+                tech={project.tech}
               />
             ))}
           </AnimatedGrid>
