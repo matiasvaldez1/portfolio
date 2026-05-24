@@ -100,6 +100,12 @@ body::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--accent-purple), var(--accent-cyan));
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 a {
   color: inherit;
   text-decoration: none;

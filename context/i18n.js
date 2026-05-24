@@ -59,6 +59,10 @@ const translations = {
       github: 'Github',
       deploy: 'Deploy',
     },
+    // 404
+    notFound: {
+      backHome: 'Go Back To Home',
+    },
   },
   es: {
     // NavBar & Footer
@@ -117,6 +121,10 @@ const translations = {
     card: {
       github: 'Github',
       deploy: 'Deploy',
+    },
+    // 404
+    notFound: {
+      backHome: 'Volver al Inicio',
     },
   },
 }

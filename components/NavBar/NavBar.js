@@ -61,7 +61,11 @@ export const NavBar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.4 }}
             >
-              <button onClick={toggleLocale} className={styles.langToggle}>
+              <button
+                onClick={toggleLocale}
+                className={styles.langToggle}
+                aria-label={locale === 'en' ? 'Switch to Spanish' : 'Switch to English'}
+              >
                 {mounted ? (locale === 'en' ? 'EN' : 'ES') : ''}
               </button>
             </motion.li>
@@ -102,6 +106,7 @@ export const NavBar = () => {
             <motion.button
               onClick={toggleLocale}
               className={styles.mobileLangToggle}
+              aria-label={locale === 'en' ? 'Switch to Spanish' : 'Switch to English'}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}

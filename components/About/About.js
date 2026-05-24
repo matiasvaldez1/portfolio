@@ -73,6 +73,7 @@ export const About = () => {
                       transition={{ delay: i * 0.1 }}
                     >
                       <span className={styles.company}>{exp.company}</span>
+                      <span className={styles.role}>{exp.role}</span>
                     </motion.li>
                   ))}
                 </ul>

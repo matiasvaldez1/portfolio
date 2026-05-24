@@ -65,7 +65,11 @@ export const Footer = () => {
                 {link.icon}
               </a>
             ))}
-            <button onClick={toggleLocale} className={styles.langToggle}>
+            <button
+              onClick={toggleLocale}
+              className={styles.langToggle}
+              aria-label={locale === 'en' ? 'Switch to Spanish' : 'Switch to English'}
+            >
               {mounted ? (locale === 'en' ? 'EN' : 'ES') : ''}
             </button>
           </div>

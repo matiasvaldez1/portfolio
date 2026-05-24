@@ -97,12 +97,17 @@
 
 .experienceItem {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-left: 1rem;
+  position: relative;
 }
 
 .experienceItem::before {
   content: '';
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
   width: 6px;
   height: 6px;
   background: var(--accent-purple);
@@ -113,6 +118,11 @@
   font-size: 1rem;
   color: var(--text-primary);
   font-weight: 500;
+}
+
+.role {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
 }
 
 .skills {
