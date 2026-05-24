@@ -30,7 +30,6 @@ export const NavBar = () => {
   return (
     <>
       <motion.nav
-        id="home"
         className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

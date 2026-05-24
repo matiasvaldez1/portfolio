@@ -14,7 +14,7 @@ export const Hero = () => {
   return (
     <>
       <NavBar />
-      <section className={styles.hero}>
+      <section id="home" className={styles.hero}>
         <div className={styles.content}>
           <motion.div
             className={styles.textContainer}
