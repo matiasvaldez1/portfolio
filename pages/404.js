@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from "react"
+import Head from "next/head"
 import styles from "../styles/404.module.css"
 import Image from "next/image"
 import errorimage from "../public/assets/404.png"
@@ -12,6 +13,10 @@ export default function Custom404() {
     
     return (
             <div className={styles.bg}>
+                <Head>
+                    <title>404 - Page Not Found | Matias Valdez</title>
+                    <meta name="robots" content="noindex" />
+                </Head>
                 <div className={styles.pos}>
                     <Image 
                     width={500}

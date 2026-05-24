@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matias-valdez-portfolio.vercel.app/sitemap.xml

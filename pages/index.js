@@ -59,6 +59,37 @@ export default function Home({ personalProjects, professionalProjects }) {
           content="Frontend Developer based in Buenos Aires. Building high-performance web experiences with React, Next.js, and Shopify."
         />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://matias-valdez-portfolio.vercel.app/" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://matias-valdez-portfolio.vercel.app/" />
+        <meta property="og:title" content="Matias Valdez | Frontend Developer" />
+        <meta property="og:description" content="Frontend Developer based in Buenos Aires. Building high-performance web experiences with React, Next.js, and Shopify." />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Matias Valdez | Frontend Developer" />
+        <meta name="twitter:description" content="Frontend Developer based in Buenos Aires. Building high-performance web experiences with React, Next.js, and Shopify." />
+
+        {/* JSON-LD Person schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Matias Valdez',
+              url: 'https://matias-valdez-portfolio.vercel.app',
+              jobTitle: 'Frontend Developer',
+              description: 'Frontend Developer based in Buenos Aires. Building high-performance web experiences with React, Next.js, and Shopify.',
+              sameAs: [
+                'https://github.com/matiasvaldez1',
+                'https://www.linkedin.com/in/matiasvaldez1/',
+              ],
+            }),
+          }}
+        />
       </Head>
 
       <SceneWrapper />
