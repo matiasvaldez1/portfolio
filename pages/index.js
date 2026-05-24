@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+import { config } from '../utils/config'
 import { Hero } from '../components/Hero/Hero'
 import { About } from '../components/About/About'
 import { scrapePersonalProjects, scrapeProfessionalProjects } from '../utils/projects'
@@ -79,13 +80,13 @@ export default function Home({ personalProjects, professionalProjects }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Matias Valdez',
+              name: config.name,
               url: 'https://matias-valdez-portfolio.vercel.app',
               jobTitle: 'Frontend Developer',
               description: 'Frontend Developer based in Buenos Aires. Building high-performance web experiences with React, Next.js, and Shopify.',
               sameAs: [
-                'https://github.com/matiasvaldez1',
-                'https://www.linkedin.com/in/matiasvaldez1/',
+                config.social.github,
+                config.social.linkedin,
               ],
             }),
           }}

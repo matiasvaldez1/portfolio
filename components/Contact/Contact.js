@@ -3,10 +3,11 @@ import styles from './Contact.module.css'
 import { FiCopy, FiCheck, FiGithub, FiLinkedin } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 import { useI18n } from '../../context/i18n'
+import { config } from '../../utils/config'
 
 export const Contact = () => {
   const [copied, setCopied] = useState(false)
-  const email = 'matiasvaldez8184@gmail.com'
+  const { email, social } = config
   const { t } = useI18n()
 
   const copyToClipboard = () => {
@@ -49,7 +50,7 @@ export const Contact = () => {
 
           <div className={styles.socials}>
             <a
-              href="https://www.linkedin.com/in/matiasvaldez1/"
+              href={social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -58,7 +59,7 @@ export const Contact = () => {
               <span>LinkedIn</span>
             </a>
             <a
-              href="https://github.com/matiasvaldez1"
+              href={social.github}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}

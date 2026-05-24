@@ -2,31 +2,11 @@ import React from 'react'
 import styles from './About.module.css'
 import { motion } from 'framer-motion'
 import { useI18n } from '../../context/i18n'
+import { config } from '../../utils/config'
 
 export const About = () => {
   const { t } = useI18n()
-
-  const skills = [
-    'React',
-    'Next.js',
-    'TypeScript',
-    'Shopify',
-    'Liquid',
-    'Remix',
-    'Node.js',
-    'GraphQL',
-    'Tailwind CSS',
-    'PostgreSQL',
-    'Prisma',
-  ]
-
-  const experience = [
-    { company: 'Prismfly', role: 'Shopify Developer' },
-    { company: 'Gohub', role: 'Frontend Developer' },
-    { company: 'GMO Solutions', role: 'Web Developer' },
-    { company: 'FJ Solutions', role: 'Frontend Developer' },
-    { company: 'Conversion Flow', role: 'Frontend Developer' },
-  ]
+  const { skills, experience } = config
 
   return (
     <section id="about" className={styles.about}>

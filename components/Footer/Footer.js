@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Footer.module.css'
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 import { useI18n } from '../../context/i18n'
+import { config } from '../../utils/config'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -20,17 +21,17 @@ export const Footer = () => {
 
   const socialLinks = [
     {
-      href: 'https://www.linkedin.com/in/matiasvaldez1/',
+      href: config.social.linkedin,
       icon: <FiLinkedin />,
       label: 'LinkedIn',
     },
     {
-      href: 'https://github.com/matiasvaldez1',
+      href: config.social.github,
       icon: <FiGithub />,
       label: 'GitHub',
     },
     {
-      href: 'mailto:matiasvaldez8184@gmail.com',
+      href: `mailto:${config.email}`,
       icon: <FiMail />,
       label: 'Email',
     },
