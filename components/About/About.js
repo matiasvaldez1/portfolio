@@ -54,6 +54,7 @@ export const About = () => {
                     >
                       <span className={styles.company}>{exp.company}</span>
                       <span className={styles.role}>{exp.role}</span>
+                      <span className={styles.period}>{exp.period}</span>
                     </motion.li>
                   ))}
                 </ul>
